@@ -49,16 +49,15 @@ kept verbatim. Rates come from Etete's own price list.
 ## Deploy
 
 Hosted on Vercel, project `gifted-touch` under The Coast's projects.
-Deploys are run from the CLI:
+
+Pushes to `main` deploy to production automatically. Pull requests and
+other branches get their own preview URLs.
+
+To ship from the CLI instead:
 
 ```bash
 vercel deploy --prod
 ```
-
-Git auto-deploy is not connected. Vercel's Hobby plan does not support
-Git integration for private organization repos, so pushing to `main`
-does not by itself ship. Push and deploy together, or make the repo
-public to enable auto-deploy.
 
 ## DNS
 
