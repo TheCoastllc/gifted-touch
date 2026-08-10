@@ -48,11 +48,30 @@ kept verbatim. Rates come from Etete's own price list.
 
 ## Deploy
 
-Pushes to `main` deploy to production automatically via Vercel.
+Hosted on Vercel, project `gifted-touch` under The Coast's projects.
+Deploys are run from the CLI:
 
 ```bash
 vercel deploy --prod
 ```
+
+Git auto-deploy is not connected. Vercel's Hobby plan does not support
+Git integration for private organization repos, so pushing to `main`
+does not by itself ship. Push and deploy together, or make the repo
+public to enable auto-deploy.
+
+## DNS
+
+`giftedtouch.org` is registered at Namecheap. Advanced DNS should hold:
+
+| Type | Host | Value | TTL |
+|---|---|---|---|
+| A | `@` | `216.198.79.1` | Automatic |
+| CNAME | `www` | `cname.vercel-dns.com.` | Automatic |
+
+Remove Namecheap's default parking records first (the `@` and `www`
+URL Redirect / CNAME rows pointing at `parkingpage.namecheap.com`).
+Vercel issues the TLS certificate automatically once DNS resolves.
 
 ---
 
