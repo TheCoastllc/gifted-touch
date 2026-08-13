@@ -48,185 +48,150 @@
 </script>
 <style>
 /* ===== DEFAULT THEME: Vesper Bronze ===== */
+/* ===== DEFAULT: Bronze & Teal ===== */
 :root{
-  --noir:#F9F5EE;
-  --noir2:#EFEAE0;
-  --noir3:#FFFCF6;
-  --gold:#8F5A2A;
-  --gold-hi:#B0722C;
-  --gold-deep:#5C3818;
+  --noir:#FAF6EE;
+  --noir2:#F0EADD;
+  --noir3:#FFFDF8;
+  --gold:#8A5622;
+  --gold-hi:#A9682A;
+  --gold-deep:#5A3714;
   --ivory:#0E3C3B;
   --lav:#6C4A78;
-  --ink:#3E5150;
-  --ink-dim:#5C6A68;
-  --line:rgba(143,90,42,.28);
-  --line-soft:rgba(143,90,42,.13);
-  --on-accent:#FFFCF6;
-  --scrim-nav:rgba(249,245,238,.93);
-  --scrim-menu:rgba(249,245,238,.985);
-  --scrim-bar:rgba(249,245,238,.95);
+  --ink:#3D504F;
+  --ink-dim:#5A6867;
+  --line:rgba(138,86,34,.30);
+  --line-soft:rgba(138,86,34,.14);
+  --on-accent:#FFFDF8;
+  --scrim-nav:rgba(250,246,238,.93);
+  --scrim-menu:rgba(250,246,238,.985);
+  --scrim-bar:rgba(250,246,238,.95);
   --photo-a:rgba(14,60,59,.02);
   --photo-b:rgba(14,60,59,.12);
-  --photo-filter:saturate(.80) contrast(1.00) brightness(1.07) sepia(.10);
-  --hero-filter:brightness(1.42) contrast(.80) saturate(.60) sepia(.16);
-  --hero-opacity:.42;
-  --glow-a:rgba(143,90,42,.10);
-  --glow-b:rgba(108,74,120,.07);
-  --glow-c:rgba(176,114,44,.06);
-  --tint:rgba(143,90,42,.06);
-  --tint-soft:rgba(143,90,42,.04);
+  --photo-filter:saturate(.86) contrast(1.02) brightness(1.04);
+  --hero-filter:none;
+  --hero-opacity:0;
+  --glow-a:rgba(138,86,34,.09);
+  --glow-b:rgba(108,74,120,.06);
+  --glow-c:rgba(169,104,42,.05);
+  --tint:rgba(138,86,34,.06);
+  --tint-soft:rgba(138,86,34,.04);
   --tint-lav:rgba(108,74,120,.05);
-  --card-a:rgba(255,252,246,.95);
-  --card-b:rgba(255,252,246,.45);
-  --shadow-cta:rgba(143,90,42,.26);
+  --card-a:rgba(255,253,248,.95);
+  --card-b:rgba(255,253,248,.45);
+  --shadow-cta:rgba(138,86,34,.26);
   --shadow-frame:rgba(14,60,59,.10);
-  --veil-bg:#F9F5EE;
+  --veil-bg:#FAF6EE;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost',system-ui,sans-serif;
 }
 
-/* Vesper Bronze - Teal, bronze and amethyst - the colours Etete named herself */
-[data-theme="vesper"]{
-  --noir:#F9F5EE;
-  --noir2:#EFEAE0;
-  --noir3:#FFFCF6;
-  --gold:#8F5A2A;
-  --gold-hi:#B0722C;
-  --gold-deep:#5C3818;
+/* Bronze & Teal */
+[data-theme="teal"]{
+  --noir:#FAF6EE;
+  --noir2:#F0EADD;
+  --noir3:#FFFDF8;
+  --gold:#8A5622;
+  --gold-hi:#A9682A;
+  --gold-deep:#5A3714;
   --ivory:#0E3C3B;
   --lav:#6C4A78;
-  --ink:#3E5150;
-  --ink-dim:#5C6A68;
-  --line:rgba(143,90,42,.28);
-  --line-soft:rgba(143,90,42,.13);
-  --on-accent:#FFFCF6;
-  --scrim-nav:rgba(249,245,238,.93);
-  --scrim-menu:rgba(249,245,238,.985);
-  --scrim-bar:rgba(249,245,238,.95);
+  --ink:#3D504F;
+  --ink-dim:#5A6867;
+  --line:rgba(138,86,34,.30);
+  --line-soft:rgba(138,86,34,.14);
+  --on-accent:#FFFDF8;
+  --scrim-nav:rgba(250,246,238,.93);
+  --scrim-menu:rgba(250,246,238,.985);
+  --scrim-bar:rgba(250,246,238,.95);
   --photo-a:rgba(14,60,59,.02);
   --photo-b:rgba(14,60,59,.12);
-  --photo-filter:saturate(.80) contrast(1.00) brightness(1.07) sepia(.10);
-  --hero-filter:brightness(1.42) contrast(.80) saturate(.60) sepia(.16);
-  --hero-opacity:.42;
-  --glow-a:rgba(143,90,42,.10);
-  --glow-b:rgba(108,74,120,.07);
-  --glow-c:rgba(176,114,44,.06);
-  --tint:rgba(143,90,42,.06);
-  --tint-soft:rgba(143,90,42,.04);
+  --photo-filter:saturate(.86) contrast(1.02) brightness(1.04);
+  --hero-filter:none;
+  --hero-opacity:0;
+  --glow-a:rgba(138,86,34,.09);
+  --glow-b:rgba(108,74,120,.06);
+  --glow-c:rgba(169,104,42,.05);
+  --tint:rgba(138,86,34,.06);
+  --tint-soft:rgba(138,86,34,.04);
   --tint-lav:rgba(108,74,120,.05);
-  --card-a:rgba(255,252,246,.95);
-  --card-b:rgba(255,252,246,.45);
-  --shadow-cta:rgba(143,90,42,.26);
+  --card-a:rgba(255,253,248,.95);
+  --card-b:rgba(255,253,248,.45);
+  --shadow-cta:rgba(138,86,34,.26);
   --shadow-frame:rgba(14,60,59,.10);
-  --veil-bg:#F9F5EE;
+  --veil-bg:#FAF6EE;
 }
 
-/* Anointed Dawn - Sunrise cream, burnished bronze and deep plum */
-[data-theme="dawn"]{
-  --noir:#FCF7F0;
-  --noir2:#F6EBDF;
-  --noir3:#F2E2D4;
-  --gold:#9C5524;
-  --gold-hi:#BE5028;
-  --gold-deep:#6E3617;
-  --ivory:#3B2242;
-  --lav:#6F51A2;
-  --ink:#574753;
-  --ink-dim:#75636D;
-  --line:rgba(156,85,36,.32);
-  --line-soft:rgba(156,85,36,.16);
+/* Porcelain & Plum */
+[data-theme="plum"]{
+  --noir:#F6F5F3;
+  --noir2:#E9E7E7;
+  --noir3:#FFFFFF;
+  --gold:#7E6018;
+  --gold-hi:#96731F;
+  --gold-deep:#54400F;
+  --ivory:#3A2140;
+  --lav:#8A4A63;
+  --ink:#4C4351;
+  --ink-dim:#665C6D;
+  --line:rgba(126,96,24,.30);
+  --line-soft:rgba(126,96,24,.14);
   --on-accent:#FFFFFF;
-  --scrim-nav:rgba(252,247,240,.93);
-  --scrim-menu:rgba(252,247,240,.985);
-  --scrim-bar:rgba(252,247,240,.95);
-  --photo-a:rgba(59,34,66,.02);
-  --photo-b:rgba(59,34,66,.12);
-  --photo-filter:saturate(.80) contrast(1.00) brightness(1.07) sepia(.10);
-  --hero-filter:brightness(1.42) contrast(.80) saturate(.60) sepia(.16);
-  --hero-opacity:.42;
-  --glow-a:rgba(156,85,36,.10);
-  --glow-b:rgba(111,81,162,.07);
-  --glow-c:rgba(190,80,40,.06);
-  --tint:rgba(156,85,36,.06);
-  --tint-soft:rgba(156,85,36,.04);
-  --tint-lav:rgba(111,81,162,.05);
-  --card-a:rgba(242,226,212,.95);
-  --card-b:rgba(242,226,212,.45);
-  --shadow-cta:rgba(156,85,36,.26);
-  --shadow-frame:rgba(59,34,66,.10);
-  --veil-bg:#FCF7F0;
+  --scrim-nav:rgba(246,245,243,.93);
+  --scrim-menu:rgba(246,245,243,.985);
+  --scrim-bar:rgba(246,245,243,.95);
+  --photo-a:rgba(58,33,64,.02);
+  --photo-b:rgba(58,33,64,.12);
+  --photo-filter:saturate(.86) contrast(1.02) brightness(1.04);
+  --hero-filter:none;
+  --hero-opacity:0;
+  --glow-a:rgba(126,96,24,.09);
+  --glow-b:rgba(138,74,99,.06);
+  --glow-c:rgba(150,115,31,.05);
+  --tint:rgba(126,96,24,.06);
+  --tint-soft:rgba(126,96,24,.04);
+  --tint-lav:rgba(138,74,99,.05);
+  --card-a:rgba(255,255,255,.95);
+  --card-b:rgba(255,255,255,.45);
+  --shadow-cta:rgba(126,96,24,.26);
+  --shadow-frame:rgba(58,33,64,.10);
+  --veil-bg:#F6F5F3;
 }
 
-/* Morning Balm - Warm paper and eucalyptus, drawn through with bronze */
-[data-theme="balm"]{
-  --noir:#F8F5EF;
-  --noir2:#E8EDE6;
-  --noir3:#FDFBF6;
-  --gold:#8A5A2B;
-  --gold-hi:#9E5A28;
-  --gold-deep:#5E3D22;
-  --ivory:#1E2420;
-  --lav:#6B5A80;
-  --ink:#4A544D;
-  --ink-dim:#646D67;
-  --line:rgba(138,90,43,.34);
-  --line-soft:rgba(138,90,43,.18);
-  --on-accent:#FDFBF6;
-  --scrim-nav:rgba(248,245,239,.93);
-  --scrim-menu:rgba(248,245,239,.985);
-  --scrim-bar:rgba(248,245,239,.95);
-  --photo-a:rgba(30,36,32,.02);
-  --photo-b:rgba(30,36,32,.12);
-  --photo-filter:saturate(.80) contrast(1.00) brightness(1.07) sepia(.10);
-  --hero-filter:brightness(1.42) contrast(.80) saturate(.60) sepia(.16);
-  --hero-opacity:.42;
-  --glow-a:rgba(138,90,43,.10);
-  --glow-b:rgba(107,90,128,.07);
-  --glow-c:rgba(158,90,40,.06);
-  --tint:rgba(138,90,43,.06);
-  --tint-soft:rgba(138,90,43,.04);
-  --tint-lav:rgba(107,90,128,.05);
-  --card-a:rgba(253,251,246,.95);
-  --card-b:rgba(253,251,246,.45);
-  --shadow-cta:rgba(138,90,43,.26);
-  --shadow-frame:rgba(30,36,32,.10);
-  --veil-bg:#F8F5EF;
-}
-
-/* Lavender Linen - Sunlit linen and dried heather with antique bronze */
-[data-theme="heather"]{
-  --noir:#F8F5EF;
-  --noir2:#EEEAF1;
-  --noir3:#FFFCF7;
-  --gold:#856022;
-  --gold-hi:#A1541F;
-  --gold-deep:#5C3D18;
-  --ivory:#2F2036;
-  --lav:#6B4B8C;
-  --ink:#5A4D5C;
-  --ink-dim:#6F6376;
-  --line:rgba(133,96,34,.34);
-  --line-soft:rgba(133,96,34,.15);
-  --on-accent:#FFFCF7;
-  --scrim-nav:rgba(248,245,239,.93);
-  --scrim-menu:rgba(248,245,239,.985);
-  --scrim-bar:rgba(248,245,239,.95);
-  --photo-a:rgba(47,32,54,.02);
-  --photo-b:rgba(47,32,54,.12);
-  --photo-filter:saturate(.80) contrast(1.00) brightness(1.07) sepia(.10);
-  --hero-filter:brightness(1.42) contrast(.80) saturate(.60) sepia(.16);
-  --hero-opacity:.42;
-  --glow-a:rgba(133,96,34,.10);
-  --glow-b:rgba(107,75,140,.07);
-  --glow-c:rgba(161,84,31,.06);
-  --tint:rgba(133,96,34,.06);
-  --tint-soft:rgba(133,96,34,.04);
-  --tint-lav:rgba(107,75,140,.05);
-  --card-a:rgba(255,252,247,.95);
-  --card-b:rgba(255,252,247,.45);
-  --shadow-cta:rgba(133,96,34,.26);
-  --shadow-frame:rgba(47,32,54,.10);
-  --veil-bg:#F8F5EF;
+/* Clay & Terracotta */
+[data-theme="clay"]{
+  --noir:#FCF1E6;
+  --noir2:#F4E2D1;
+  --noir3:#FFF9F3;
+  --gold:#A8481F;
+  --gold-hi:#BE5426;
+  --gold-deep:#6E2E12;
+  --ivory:#3B2A20;
+  --lav:#7A5340;
+  --ink:#5A4A40;
+  --ink-dim:#75655A;
+  --line:rgba(168,72,31,.28);
+  --line-soft:rgba(168,72,31,.13);
+  --on-accent:#FFF9F3;
+  --scrim-nav:rgba(252,241,230,.93);
+  --scrim-menu:rgba(252,241,230,.985);
+  --scrim-bar:rgba(252,241,230,.95);
+  --photo-a:rgba(59,42,32,.02);
+  --photo-b:rgba(59,42,32,.12);
+  --photo-filter:saturate(.86) contrast(1.02) brightness(1.04);
+  --hero-filter:none;
+  --hero-opacity:0;
+  --glow-a:rgba(168,72,31,.09);
+  --glow-b:rgba(122,83,64,.06);
+  --glow-c:rgba(190,84,38,.05);
+  --tint:rgba(168,72,31,.06);
+  --tint-soft:rgba(168,72,31,.04);
+  --tint-lav:rgba(122,83,64,.05);
+  --card-a:rgba(255,249,243,.95);
+  --card-b:rgba(255,249,243,.45);
+  --shadow-cta:rgba(168,72,31,.26);
+  --shadow-frame:rgba(59,42,32,.10);
+  --veil-bg:#FCF1E6;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -329,75 +294,111 @@ h2 em{font-style:italic;color:var(--gold-hi)}
 /* ---------- hero ---------- */
 #hero{
   min-height:100svh;display:flex;align-items:center;
-  padding:170px 0 110px;overflow:hidden;
+  padding:0;overflow:hidden;position:relative;
 }
 #hero .glow{
   position:absolute;inset:0;pointer-events:none;
   background:
-    radial-gradient(48% 42% at 72% 30%,var(--glow-a),transparent 70%),
-    radial-gradient(38% 34% at 22% 78%,var(--glow-b),transparent 70%),
-    radial-gradient(30% 26% at 50% 55%,var(--glow-c),transparent 70%);
-  animation:breathe 9s ease-in-out infinite alternate;
+    radial-gradient(48% 42% at 30% 24%,var(--glow-a),transparent 70%),
+    radial-gradient(38% 34% at 12% 82%,var(--glow-b),transparent 70%);
+  animation:breathe 11s ease-in-out infinite alternate;
 }
-@keyframes breathe{from{opacity:.75;transform:scale(1)}to{opacity:1;transform:scale(1.05)}}
-#hero .heroimg{
-  position:absolute;inset:0;z-index:-1;opacity:var(--hero-opacity);
-  background:url("img/studio-candlelight.jpg") center 40%/cover no-repeat;
-  filter:var(--hero-filter);
-  mask-image:radial-gradient(85% 85% at 50% 45%,#000 30%,transparent 100%);
-  -webkit-mask-image:radial-gradient(85% 85% at 50% 45%,#000 30%,transparent 100%);
+@keyframes breathe{from{opacity:.7;transform:scale(1)}to{opacity:1;transform:scale(1.04)}}
+.hero-inner{position:relative;z-index:1;width:100%}
+.hero-text{
+  max-width:1240px;margin:0 auto;width:100%;
+  padding:150px 28px 118px;
 }
+@media(min-width:1001px){.hero-text{padding-right:352px}}
+@media(max-width:1000px){h1{white-space:normal}}
+/* silk is an inset colour field: bleeds right and bottom, clears the nav on top */
+.silk{
+  position:absolute;top:84px;right:0;bottom:0;width:300px;z-index:0;
+  border-left:1px solid var(--line-soft);overflow:hidden;
+}
+.silk img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.72) brightness(.94) contrast(1.04)}
+.silk::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--noir) 0%,transparent 14%,transparent 86%,rgba(0,0,0,.10) 100%);pointer-events:none}
+
 .hero-eyebrow{
-  font-size:11.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);
-  font-weight:500;margin-bottom:34px;display:flex;align-items:center;gap:18px;
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
+  font-weight:500;margin-bottom:38px;display:flex;align-items:center;gap:16px;
 }
-.hero-eyebrow::before,.hero-eyebrow::after{content:"";height:1px;width:44px;background:linear-gradient(90deg,transparent,var(--gold))}
-.hero-eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.hero-eyebrow::after{content:"";height:1px;flex:1 1 auto;max-width:120px;background:linear-gradient(90deg,var(--line),transparent)}
+
 h1{
-  font-family:var(--serif);font-weight:500;
-  font-size:clamp(52px,9.2vw,124px);
-  line-height:1.02;letter-spacing:0;
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(29px,4.15vw,58px);
+  line-height:1.12;letter-spacing:-.012em;color:var(--ivory);
+  max-width:none;white-space:nowrap;
 }
 h1 .ln{display:block;overflow:hidden}
-h1 .ln span{display:inline-block;transform:translateY(115%);transition:transform 1.25s cubic-bezier(.22,1,.36,1)}
+h1 .ln span{display:inline-block;transform:translateY(112%);transition:transform 1.15s cubic-bezier(.22,1,.36,1)}
 h1.play .ln span{transform:none}
 h1 .ln:nth-child(2) span{transition-delay:.14s}
-h1 em{font-style:italic;color:var(--gold-hi)}
-.hero-sub{
-  margin-top:36px;font-size:17.5px;color:var(--ink);max-width:540px;
-  opacity:0;transform:translateY(20px);transition:opacity 1s .55s,transform 1s .55s;
+h1 .ln:nth-child(3) span{transition-delay:.28s}
+h1 em{font-style:italic;font-weight:500;color:var(--gold-hi)}
+
+/* the breath mark: where the speaker actually paused */
+.br{
+  display:inline-block;width:1px;height:.66em;background:var(--lav);opacity:.45;
+  margin:0 .04em 0 .42em;vertical-align:-.02em;
 }
-.play ~ .hero-sub, .hero-sub.in{opacity:1;transform:none}
-.hero-ctas{display:flex;gap:18px;margin-top:44px;flex-wrap:wrap;opacity:0;transform:translateY(20px);transition:opacity 1s .75s,transform 1s .75s}
+h1.play .br{animation:breathIn .5s .9s both}
+@keyframes breathIn{from{opacity:0;transform:scaleY(.3)}to{opacity:.45;transform:none}}
+
+.hero-attrib{
+  margin-top:40px;font-size:14px;line-height:1.65;color:var(--ink-dim);max-width:46ch;
+  opacity:0;transform:translateY(18px);transition:opacity 1s .6s,transform 1s .6s;
+}
+.hero-attrib.in{opacity:1;transform:none}
+.hero-attrib .rail{
+  display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;margin-bottom:12px;
+}
+.hero-ctas{display:flex;gap:18px;margin-top:44px;flex-wrap:wrap;opacity:0;transform:translateY(18px);transition:opacity 1s .78s,transform 1s .78s}
 .hero-ctas.in{opacity:1;transform:none}
 .btn{
   display:inline-flex;align-items:center;gap:12px;
-  font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
-  padding:17px 38px;border-radius:100px;transition:.35s;
+  font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+  padding:17px 34px;border-radius:100px;transition:.35s;
 }
 .btn-gold{background:var(--gold);color:var(--on-accent)}
 .btn-gold:hover{background:var(--gold-hi);transform:translateY(-2px);box-shadow:0 14px 34px var(--shadow-cta)}
-.btn-ghost{border:1px solid var(--line);color:var(--gold-hi)}
+.btn-ghost{border:1px solid var(--line);color:var(--gold)}
 .btn-ghost:hover{border-color:var(--gold);background:var(--tint)}
 .hero-cred{
-  margin-top:70px;display:flex;gap:34px;flex-wrap:wrap;
-  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);
+  margin-top:64px;display:flex;gap:30px;flex-wrap:wrap;
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);
   opacity:0;transition:opacity 1.2s 1s;
 }
 .hero-cred.in{opacity:1}
 .hero-cred span{display:flex;align-items:center;gap:10px}
 .hero-cred i{width:4px;height:4px;background:var(--gold);border-radius:50%;transform:rotate(45deg)}
 #scrollhint{
-  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;
   display:flex;flex-direction:column;align-items:center;gap:10px;
   font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);
 }
 #scrollhint::after{
-  content:"";width:1px;height:44px;
+  content:"";width:1px;height:40px;
   background:linear-gradient(180deg,var(--gold),transparent);
-  animation:drip 2.2s ease-in-out infinite;
+  animation:drip 2.4s ease-in-out infinite;
 }
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* THE 240 RULE - studio interiors are 500x375 originals and must never be
+   displayed large. They are matted plates, sized so DPR-2 stays under native. */
+.plates{display:flex;gap:22px;flex-wrap:wrap;margin-top:44px}
+.plate{max-width:240px}
+.plate img{
+  width:216px;height:158px;object-fit:cover;display:block;
+  background:var(--noir3);border:1px solid var(--line-soft);padding:7px;
+  filter:saturate(.94) contrast(1.02);
+}
+.plate figcaption{
+  margin-top:10px;font-size:11.5px;line-height:1.5;color:var(--ink-dim);
+  letter-spacing:.02em;max-width:216px;
+}
 
 /* ---------- marquee ---------- */
 #marquee{
@@ -414,8 +415,10 @@ h1 em{font-style:italic;color:var(--gold-hi)}
 
 /* ---------- story ---------- */
 #story .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
-#story .photo{aspect-ratio:4/4.6}
-#story .photo{box-shadow:26px 26px 0 -1px var(--noir2),27px 27px 0 0 var(--line)}
+#story .photo{aspect-ratio:800/600;max-width:400px;background:var(--noir3);padding:11px;border:1px solid var(--line-soft);box-shadow:0 6px 22px var(--shadow-frame)}
+#story .photo img{filter:saturate(.86) contrast(1.05) brightness(1.05)}
+#story .photo::after{display:none}
+#story figcaption,.plate-cap{margin-top:12px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim)}
 .story-quote{
   font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.5;color:var(--gold-hi);
   border-left:1px solid var(--gold);padding-left:26px;margin:34px 0;
@@ -467,8 +470,8 @@ h1 em{font-style:italic;color:var(--gold-hi)}
 /* ---------- mobile / chair ---------- */
 #mobile .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:80px;align-items:center}
 #mobile .photos{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-#mobile .photo:first-child{aspect-ratio:3/4}
-#mobile .photo:last-child{aspect-ratio:3/4;transform:translateY(34px)}
+#mobile .photo:first-child{aspect-ratio:3/4;max-width:420px}
+#mobile .photo:last-child{aspect-ratio:3/4;transform:translateY(34px);max-width:340px}
 .mob-points{margin-top:36px;display:flex;flex-direction:column;gap:22px}
 .mob-point{display:flex;gap:20px;align-items:flex-start}
 .mob-point i{
@@ -512,11 +515,12 @@ h1 em{font-style:italic;color:var(--gold-hi)}
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .prod{
   border:1px solid var(--line-soft);border-radius:4px;overflow:hidden;
-  background:var(--noir);transition:border-color .4s,transform .4s;
+  background:var(--noir3);transition:border-color .4s,transform .4s;
 }
+.prod .photo::after{background:radial-gradient(circle at 50% 46%,transparent 34%,var(--noir3) 100%);opacity:.92}
 .prod:hover{border-color:var(--line);transform:translateY(-5px)}
-.prod .photo{aspect-ratio:1/1.06;border-radius:0}
-.prod .photo img{filter:saturate(.95) contrast(1.03)}
+.prod .photo{aspect-ratio:1/1;border-radius:0;background:var(--noir3)}
+.prod .photo img{filter:brightness(1.18) contrast(.94) saturate(.92)}
 .prod .info{padding:26px 26px 30px}
 .prod .cat{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--lav);font-weight:500;margin-bottom:8px}
 .prod h3{font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.15;margin-bottom:6px}
@@ -640,7 +644,9 @@ h1 em{font-style:italic;color:var(--gold-hi)}
 .c-item .val{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ivory);text-align:right;line-height:1.3}
 .c-item .val small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-dim);letter-spacing:.06em;font-weight:300}
 .c-item a.val:hover{color:var(--gold-hi)}
-#contact .photo{aspect-ratio:4/4.4;box-shadow:-26px 26px 0 -1px var(--noir2),-27px 27px 0 0 var(--line)}
+#contact .photo{aspect-ratio:500/375;max-width:250px;background:var(--noir3);padding:10px;border:1px solid var(--line-soft);box-shadow:0 6px 22px var(--shadow-frame)}
+#contact .photo img{filter:grayscale(.5) sepia(.18) contrast(1.1) brightness(1.16) saturate(1.04)}
+#contact .photo::after{display:none}
 .c-cta{margin-top:44px;display:flex;gap:16px;flex-wrap:wrap}
 
 /* ---------- footer ---------- */
@@ -700,6 +706,10 @@ footer{
 
 /* ---------- responsive ---------- */
 @media(max-width:1000px){
+  .hero-inner{grid-template-columns:1fr}
+  .silk{position:absolute;top:auto;inset:auto 0 0 0;width:auto;height:118px;border-left:none;border-top:1px solid var(--line-soft)}
+  .hero-text{padding:150px 28px 190px}
+  h1{max-width:none}
   .navlinks{display:none}
   #burger{display:block}
   #story .grid,#mobile .grid,#contact .grid{grid-template-columns:1fr;gap:56px}
@@ -712,7 +722,10 @@ footer{
 }
 @media(max-width:640px){
   section{padding:90px 0}
-  #hero{padding:150px 0 120px}
+  .hero-text{padding:132px 22px 180px}
+  .plates{gap:16px}
+  .plate,.plate img,.plate figcaption{max-width:100%}
+  .plate img{width:100%;height:auto;aspect-ratio:500/375}
   .addons{grid-template-columns:repeat(2,1fr)}
   .prod-grid{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr;gap:16px}
@@ -786,26 +799,32 @@ footer{
 
 <!-- hero -->
 <section id="hero">
-  <div class="heroimg" aria-hidden="true"></div>
   <div class="glow" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="hero-eyebrow">Huntsville, Alabama · Est. 2006</div>
-    <h1 id="headline">
-      <span class="ln"><span>Anointed hands.</span></span>
-      <span class="ln"><span><em>A gifted touch.</em></span></span>
-    </h1>
-    <p class="hero-sub" id="herosub">
-      Board certified therapeutic massage in Huntsville, Alabama.
-      Helping you maintain your total well-being for more than twenty years.
-    </p>
-    <div class="hero-ctas" id="heroctas">
-      <a class="btn btn-gold" href="#book">Book a Session</a>
-      <a class="btn btn-ghost" href="#services">View Services</a>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Gifted Touch · Huntsville, Alabama · Est. 2006</div>
+      <h1 id="headline">
+        <span class="ln"><span>They say &ldquo;gifted touch&rdquo;?<b class="br" aria-hidden="true"></b></span></span>
+        <span class="ln"><span>Honey, let me tell you,<b class="br" aria-hidden="true"></b></span></span>
+        <span class="ln"><span>it&rsquo;s <em>shonuff</em> gifted touch.</span></span>
+      </h1>
+      <p class="hero-attrib" id="herosub">
+        <span class="rail">Brenda · 67 · Client</span>
+        Brenda has herniated discs, bulging discs, and arthritis in her hips and
+        legs. She said this after one session with Etete.
+      </p>
+      <div class="hero-ctas" id="heroctas">
+        <a class="btn btn-gold" href="#book">Book a Session</a>
+        <a class="btn btn-ghost" href="#services">Services &amp; Rates</a>
+      </div>
+      <div class="hero-cred" id="herocred">
+        <span><i></i>Board Certified · NCTMB</span>
+        <span><i></i>Alabama LMT 1745</span>
+        <span><i></i>Anointed hands. A gifted touch.</span>
+      </div>
     </div>
-    <div class="hero-cred" id="herocred">
-      <span><i></i>Board Certified · NCTMB</span>
-      <span><i></i>Alabama LMT 1745</span>
-      <span><i></i>Studio + Corporate</span>
+    <div class="silk" aria-hidden="true">
+      <img src="img/silk-column.jpg" alt="" width="900" height="2050" fetchpriority="high">
     </div>
   </div>
   <div id="scrollhint">Scroll</div>
@@ -826,8 +845,9 @@ footer{
   <div class="wrap">
     <div class="grid">
       <div class="photo" data-reveal>
-        <img src="img/etete-portrait.jpg" alt="Etete Agbabune Torres in her candlelit Huntsville massage studio" loading="lazy">
+        <img src="img/etete-portrait.jpg" alt="Etete Agbabune Torres in her Huntsville massage studio" width="800" height="600" loading="lazy">
       </div>
+      <div class="plate-cap" data-reveal="2">Etete Agbabune Torres, LMT · Westmill Drive</div>
       <div>
         <div class="eyebrow" data-reveal><span class="num">01</span>The Story</div>
         <h2 data-reveal="2">The gift is from God.<br><em>The touch is the ministry.</em></h2>
@@ -1290,8 +1310,9 @@ footer{
         </div>
       </div>
       <div class="photo" data-reveal="2">
-        <img src="img/studio-candlelight.jpg" alt="The candlelit Gifted Touch studio, table prepared for a session" loading="lazy">
+        <img src="img/studio-candlelight.jpg" alt="The candlelit Gifted Touch studio, table prepared for a session" width="500" height="375" loading="lazy">
       </div>
+      <div class="plate-cap" data-reveal="3">The studio, prepared</div>
     </div>
   </div>
 </section>
@@ -1433,16 +1454,15 @@ footer{
 
   /* ---- palette picker · REVIEW TOOL · delete this block to remove ---- */
   var THEMES = [
-    {k:'vesper',  n:'Vesper Bronze',  bg:'#F9F5EE', ac:'#8F5A2A', ink:'#0E3C3B'},
-    {k:'dawn',    n:'Anointed Dawn',  bg:'#FCF7F0', ac:'#9C5524', ink:'#3B2242'},
-    {k:'balm',    n:'Morning Balm',   bg:'#F8F5EF', ac:'#8A5A2B', ink:'#1E2420'},
-    {k:'heather', n:'Lavender Linen', bg:'#F8F5EF', ac:'#856022', ink:'#2F2036'}
+    {k:'teal', n:'Bronze & Teal',     bg:'#FAF6EE', ac:'#8A5622', ink:'#0E3C3B'},
+    {k:'plum', n:'Porcelain & Plum',  bg:'#F6F5F3', ac:'#7E6018', ink:'#3A2140'},
+    {k:'clay', n:'Clay & Terracotta', bg:'#FCF1E6', ac:'#A8481F', ink:'#3B2A20'}
   ];
   var picker = document.getElementById('palette');
   var sw = document.getElementById('swatches');
   var saved = null;
   try { saved = localStorage.getItem('gt_theme'); } catch(e){}
-  var current = saved || 'vesper';
+  var current = saved || 'teal';
   document.documentElement.setAttribute('data-theme', current);
 
   THEMES.forEach(function(t){
