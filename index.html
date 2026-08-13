@@ -309,15 +309,6 @@ h2 em{font-style:italic;color:var(--gold-hi)}
   max-width:1240px;margin:0 auto;width:100%;
   padding:150px 28px 118px;
 }
-@media(min-width:1001px){.hero-text{padding-right:352px}}
-@media(max-width:1000px){h1{white-space:normal}}
-/* silk is an inset colour field: bleeds right and bottom, clears the nav on top */
-.silk{
-  position:absolute;top:84px;right:0;bottom:0;width:300px;z-index:0;
-  border-left:1px solid var(--line-soft);overflow:hidden;
-}
-.silk img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.72) brightness(.94) contrast(1.04)}
-.silk::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--noir) 0%,transparent 14%,transparent 86%,rgba(0,0,0,.10) 100%);pointer-events:none}
 
 .hero-eyebrow{
   font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);
@@ -327,15 +318,13 @@ h2 em{font-style:italic;color:var(--gold-hi)}
 
 h1{
   font-family:var(--serif);font-weight:300;
-  font-size:clamp(29px,4.15vw,58px);
-  line-height:1.12;letter-spacing:-.012em;color:var(--ivory);
-  max-width:none;white-space:nowrap;
+  font-size:clamp(46px,8.2vw,112px);
+  line-height:1.02;letter-spacing:-.015em;color:var(--ivory);
 }
 h1 .ln{display:block;overflow:hidden}
 h1 .ln span{display:inline-block;transform:translateY(112%);transition:transform 1.15s cubic-bezier(.22,1,.36,1)}
 h1.play .ln span{transform:none}
 h1 .ln:nth-child(2) span{transition-delay:.14s}
-h1 .ln:nth-child(3) span{transition-delay:.28s}
 h1 em{font-style:italic;font-weight:500;color:var(--gold-hi)}
 
 /* the breath mark: where the speaker actually paused */
@@ -347,14 +336,10 @@ h1.play .br{animation:breathIn .5s .9s both}
 @keyframes breathIn{from{opacity:0;transform:scaleY(.3)}to{opacity:.45;transform:none}}
 
 .hero-attrib{
-  margin-top:40px;font-size:14px;line-height:1.65;color:var(--ink-dim);max-width:46ch;
+  margin-top:36px;font-size:17px;line-height:1.7;color:var(--ink);max-width:44ch;
   opacity:0;transform:translateY(18px);transition:opacity 1s .6s,transform 1s .6s;
 }
 .hero-attrib.in{opacity:1;transform:none}
-.hero-attrib .rail{
-  display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--gold);font-weight:500;margin-bottom:12px;
-}
 .hero-ctas{display:flex;gap:18px;margin-top:44px;flex-wrap:wrap;opacity:0;transform:translateY(18px);transition:opacity 1s .78s,transform 1s .78s}
 .hero-ctas.in{opacity:1;transform:none}
 .btn{
@@ -707,7 +692,6 @@ footer{
 /* ---------- responsive ---------- */
 @media(max-width:1000px){
   .hero-inner{grid-template-columns:1fr}
-  .silk{position:absolute;top:auto;inset:auto 0 0 0;width:auto;height:118px;border-left:none;border-top:1px solid var(--line-soft)}
   .hero-text{padding:150px 28px 190px}
   h1{max-width:none}
   .navlinks{display:none}
@@ -802,29 +786,24 @@ footer{
   <div class="glow" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-eyebrow">Gifted Touch · Huntsville, Alabama · Est. 2006</div>
+      <div class="hero-eyebrow">Huntsville, Alabama · Est. 2006</div>
       <h1 id="headline">
-        <span class="ln"><span>They say &ldquo;gifted touch&rdquo;?<b class="br" aria-hidden="true"></b></span></span>
-        <span class="ln"><span>Honey, let me tell you,<b class="br" aria-hidden="true"></b></span></span>
-        <span class="ln"><span>it&rsquo;s <em>shonuff</em> gifted touch.</span></span>
+        <span class="ln"><span>Anointed hands.</span></span>
+        <span class="ln"><span><em>A gifted touch.</em></span></span>
       </h1>
       <p class="hero-attrib" id="herosub">
-        <span class="rail">Brenda · 67 · Client</span>
-        Brenda has herniated discs, bulging discs, and arthritis in her hips and
-        legs. She said this after one session with Etete.
+        Board certified therapeutic massage in Huntsville, Alabama.
+        Helping you maintain your total well-being for more than twenty years.
       </p>
       <div class="hero-ctas" id="heroctas">
         <a class="btn btn-gold" href="#book">Book a Session</a>
-        <a class="btn btn-ghost" href="#services">Services &amp; Rates</a>
+        <a class="btn btn-ghost" href="#services">View Services</a>
       </div>
       <div class="hero-cred" id="herocred">
         <span><i></i>Board Certified · NCTMB</span>
         <span><i></i>Alabama LMT 1745</span>
-        <span><i></i>Anointed hands. A gifted touch.</span>
+        <span><i></i>Studio + Corporate</span>
       </div>
-    </div>
-    <div class="silk" aria-hidden="true">
-      <img src="img/silk-column.jpg" alt="" width="900" height="2050" fetchpriority="high">
     </div>
   </div>
   <div id="scrollhint">Scroll</div>
