@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gifted Touch Therapeutic Massage · Huntsville, AL</title>
-<meta name="description" content="Anointed hands. A gifted touch. Board certified therapeutic massage in Huntsville, Alabama - in studio and mobile. Relaxation, deep tissue, chair massage, and a handcrafted body care line. Est. 2006.">
+<meta name="description" content="Anointed hands. A gifted touch. Board certified therapeutic massage in Huntsville, Alabama. Relaxation, deep tissue, prenatal, and warm stone massage, corporate chair massage, and a handcrafted body care line. Est. 2006.">
 <meta property="og:title" content="Gifted Touch Therapeutic Massage · Huntsville, AL">
-<meta property="og:description" content="Anointed hands. A gifted touch. Board certified therapeutic massage, in studio and at your door, since 2006.">
+<meta property="og:description" content="Anointed hands. A gifted touch. Board certified therapeutic massage in Huntsville, Alabama, since 2006.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171209'/%3E%3Cpath d='M32 14c3.2 4.6 5 7.6 5 10.4 0 3.1-2.2 5.6-5 5.6s-5-2.5-5-5.6c0-2.8 1.8-5.8 5-10.4z' fill='%23C9A45C'/%3E%3Cpath d='M14 40c5 7 11 10 18 10s13-3 18-10' stroke='%23C9A45C' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F9F5EE'/%3E%3Cg fill='%238F5A2A'%3E%3Cpath d='M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z'/%3E%3Cpath d='M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z' transform='rotate(-48 32 39.5)'/%3E%3Cpath d='M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z' transform='rotate(48 32 39.5)'/%3E%3C/g%3E%3Cpath d='M21.5 43.5 C26 47 38 47 42.5 43.5' fill='none' stroke='%238F5A2A' stroke-width='1.7' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"What types of massage do you offer?","acceptedAnswer":{"@type":"Answer","text":"We offer a wide range of massage techniques tailored to your needs, including Swedish massage, Deep Tissue massage, Hot Stone massage, Sports massage, Prenatal massage, and more. Each massage is customized to address your specific concerns and preferences."}},
+    {"@type":"Question","name":"What types of massage do you offer?","acceptedAnswer":{"@type":"Answer","text":"We offer a wide range of massage techniques tailored to your needs, including Swedish relaxation massage, Deep Tissue massage, Warm Stone massage, and Prenatal massage. Each massage is customized to address your specific concerns and preferences."}},
     {"@type":"Question","name":"How long is a typical massage session?","acceptedAnswer":{"@type":"Answer","text":"Sessions typically range from 60 to 90 minutes. Shorter sessions are available for targeted treatments, and longer sessions for a more comprehensive relaxation experience."}},
     {"@type":"Question","name":"How can I book an appointment?","acceptedAnswer":{"@type":"Answer","text":"Book online, call 256.326.0890 or 256.898.5070, or email gifted70touch@gmail.com. We recommend booking in advance to secure your preferred date and time."}},
     {"@type":"Question","name":"What is your cancellation policy?","acceptedAnswer":{"@type":"Answer","text":"If you need to cancel or reschedule, we kindly ask for at least 24 hours notice. Late cancellations or no-shows may be subject to a cancellation fee."}}
@@ -47,22 +47,188 @@
 }
 </script>
 <style>
+/* ===== DEFAULT THEME: Vesper Bronze ===== */
 :root{
-  --noir:#171209;
-  --noir2:#1f1810;
-  --noir3:#282014;
-  --gold:#C9A45C;
-  --gold-hi:#E9D3A0;
-  --gold-deep:#96733A;
-  --ivory:#F2E9D8;
-  --lav:#A798C0;
-  --ink:rgba(242,233,216,.68);
-  --ink-dim:rgba(242,233,216,.44);
-  --line:rgba(201,164,92,.28);
-  --line-soft:rgba(201,164,92,.13);
+  --noir:#F9F5EE;
+  --noir2:#EFEAE0;
+  --noir3:#FFFCF6;
+  --gold:#8F5A2A;
+  --gold-hi:#B0722C;
+  --gold-deep:#5C3818;
+  --ivory:#0E3C3B;
+  --lav:#6C4A78;
+  --ink:#3E5150;
+  --ink-dim:#5C6A68;
+  --line:rgba(143,90,42,.28);
+  --line-soft:rgba(143,90,42,.13);
+  --on-accent:#FFFCF6;
+  --scrim-nav:rgba(249,245,238,.93);
+  --scrim-menu:rgba(249,245,238,.985);
+  --scrim-bar:rgba(249,245,238,.95);
+  --photo-a:rgba(14,60,59,.02);
+  --photo-b:rgba(14,60,59,.12);
+  --photo-filter:saturate(.80) contrast(1.00) brightness(1.07) sepia(.10);
+  --hero-filter:brightness(1.42) contrast(.80) saturate(.60) sepia(.16);
+  --hero-opacity:.42;
+  --glow-a:rgba(143,90,42,.10);
+  --glow-b:rgba(108,74,120,.07);
+  --glow-c:rgba(176,114,44,.06);
+  --tint:rgba(143,90,42,.06);
+  --tint-soft:rgba(143,90,42,.04);
+  --tint-lav:rgba(108,74,120,.05);
+  --card-a:rgba(255,252,246,.95);
+  --card-b:rgba(255,252,246,.45);
+  --shadow-cta:rgba(143,90,42,.26);
+  --shadow-frame:rgba(14,60,59,.10);
+  --veil-bg:#F9F5EE;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost',system-ui,sans-serif;
 }
+
+/* Vesper Bronze - Teal, bronze and amethyst - the colours Etete named herself */
+[data-theme="vesper"]{
+  --noir:#F9F5EE;
+  --noir2:#EFEAE0;
+  --noir3:#FFFCF6;
+  --gold:#8F5A2A;
+  --gold-hi:#B0722C;
+  --gold-deep:#5C3818;
+  --ivory:#0E3C3B;
+  --lav:#6C4A78;
+  --ink:#3E5150;
+  --ink-dim:#5C6A68;
+  --line:rgba(143,90,42,.28);
+  --line-soft:rgba(143,90,42,.13);
+  --on-accent:#FFFCF6;
+  --scrim-nav:rgba(249,245,238,.93);
+  --scrim-menu:rgba(249,245,238,.985);
+  --scrim-bar:rgba(249,245,238,.95);
+  --photo-a:rgba(14,60,59,.02);
+  --photo-b:rgba(14,60,59,.12);
+  --photo-filter:saturate(.80) contrast(1.00) brightness(1.07) sepia(.10);
+  --hero-filter:brightness(1.42) contrast(.80) saturate(.60) sepia(.16);
+  --hero-opacity:.42;
+  --glow-a:rgba(143,90,42,.10);
+  --glow-b:rgba(108,74,120,.07);
+  --glow-c:rgba(176,114,44,.06);
+  --tint:rgba(143,90,42,.06);
+  --tint-soft:rgba(143,90,42,.04);
+  --tint-lav:rgba(108,74,120,.05);
+  --card-a:rgba(255,252,246,.95);
+  --card-b:rgba(255,252,246,.45);
+  --shadow-cta:rgba(143,90,42,.26);
+  --shadow-frame:rgba(14,60,59,.10);
+  --veil-bg:#F9F5EE;
+}
+
+/* Anointed Dawn - Sunrise cream, burnished bronze and deep plum */
+[data-theme="dawn"]{
+  --noir:#FCF7F0;
+  --noir2:#F6EBDF;
+  --noir3:#F2E2D4;
+  --gold:#9C5524;
+  --gold-hi:#BE5028;
+  --gold-deep:#6E3617;
+  --ivory:#3B2242;
+  --lav:#6F51A2;
+  --ink:#574753;
+  --ink-dim:#75636D;
+  --line:rgba(156,85,36,.32);
+  --line-soft:rgba(156,85,36,.16);
+  --on-accent:#FFFFFF;
+  --scrim-nav:rgba(252,247,240,.93);
+  --scrim-menu:rgba(252,247,240,.985);
+  --scrim-bar:rgba(252,247,240,.95);
+  --photo-a:rgba(59,34,66,.02);
+  --photo-b:rgba(59,34,66,.12);
+  --photo-filter:saturate(.80) contrast(1.00) brightness(1.07) sepia(.10);
+  --hero-filter:brightness(1.42) contrast(.80) saturate(.60) sepia(.16);
+  --hero-opacity:.42;
+  --glow-a:rgba(156,85,36,.10);
+  --glow-b:rgba(111,81,162,.07);
+  --glow-c:rgba(190,80,40,.06);
+  --tint:rgba(156,85,36,.06);
+  --tint-soft:rgba(156,85,36,.04);
+  --tint-lav:rgba(111,81,162,.05);
+  --card-a:rgba(242,226,212,.95);
+  --card-b:rgba(242,226,212,.45);
+  --shadow-cta:rgba(156,85,36,.26);
+  --shadow-frame:rgba(59,34,66,.10);
+  --veil-bg:#FCF7F0;
+}
+
+/* Morning Balm - Warm paper and eucalyptus, drawn through with bronze */
+[data-theme="balm"]{
+  --noir:#F8F5EF;
+  --noir2:#E8EDE6;
+  --noir3:#FDFBF6;
+  --gold:#8A5A2B;
+  --gold-hi:#9E5A28;
+  --gold-deep:#5E3D22;
+  --ivory:#1E2420;
+  --lav:#6B5A80;
+  --ink:#4A544D;
+  --ink-dim:#646D67;
+  --line:rgba(138,90,43,.34);
+  --line-soft:rgba(138,90,43,.18);
+  --on-accent:#FDFBF6;
+  --scrim-nav:rgba(248,245,239,.93);
+  --scrim-menu:rgba(248,245,239,.985);
+  --scrim-bar:rgba(248,245,239,.95);
+  --photo-a:rgba(30,36,32,.02);
+  --photo-b:rgba(30,36,32,.12);
+  --photo-filter:saturate(.80) contrast(1.00) brightness(1.07) sepia(.10);
+  --hero-filter:brightness(1.42) contrast(.80) saturate(.60) sepia(.16);
+  --hero-opacity:.42;
+  --glow-a:rgba(138,90,43,.10);
+  --glow-b:rgba(107,90,128,.07);
+  --glow-c:rgba(158,90,40,.06);
+  --tint:rgba(138,90,43,.06);
+  --tint-soft:rgba(138,90,43,.04);
+  --tint-lav:rgba(107,90,128,.05);
+  --card-a:rgba(253,251,246,.95);
+  --card-b:rgba(253,251,246,.45);
+  --shadow-cta:rgba(138,90,43,.26);
+  --shadow-frame:rgba(30,36,32,.10);
+  --veil-bg:#F8F5EF;
+}
+
+/* Lavender Linen - Sunlit linen and dried heather with antique bronze */
+[data-theme="heather"]{
+  --noir:#F8F5EF;
+  --noir2:#EEEAF1;
+  --noir3:#FFFCF7;
+  --gold:#856022;
+  --gold-hi:#A1541F;
+  --gold-deep:#5C3D18;
+  --ivory:#2F2036;
+  --lav:#6B4B8C;
+  --ink:#5A4D5C;
+  --ink-dim:#6F6376;
+  --line:rgba(133,96,34,.34);
+  --line-soft:rgba(133,96,34,.15);
+  --on-accent:#FFFCF7;
+  --scrim-nav:rgba(248,245,239,.93);
+  --scrim-menu:rgba(248,245,239,.985);
+  --scrim-bar:rgba(248,245,239,.95);
+  --photo-a:rgba(47,32,54,.02);
+  --photo-b:rgba(47,32,54,.12);
+  --photo-filter:saturate(.80) contrast(1.00) brightness(1.07) sepia(.10);
+  --hero-filter:brightness(1.42) contrast(.80) saturate(.60) sepia(.16);
+  --hero-opacity:.42;
+  --glow-a:rgba(133,96,34,.10);
+  --glow-b:rgba(107,75,140,.07);
+  --glow-c:rgba(161,84,31,.06);
+  --tint:rgba(133,96,34,.06);
+  --tint-soft:rgba(133,96,34,.04);
+  --tint-lav:rgba(107,75,140,.05);
+  --card-a:rgba(255,252,247,.95);
+  --card-b:rgba(255,252,247,.45);
+  --shadow-cta:rgba(133,96,34,.26);
+  --shadow-frame:rgba(47,32,54,.10);
+  --veil-bg:#F8F5EF;
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -74,25 +240,25 @@ body{
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
-::selection{background:var(--gold);color:var(--noir)}
+::selection{background:var(--gold);color:var(--on-accent)}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 
 /* ---------- loader ---------- */
 #veil{
-  position:fixed;inset:0;z-index:200;background:var(--noir);
+  position:fixed;inset:0;z-index:200;background:var(--veil-bg);
   display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;
   transition:opacity .9s ease,visibility .9s;
 }
 #veil.gone{opacity:0;visibility:hidden}
-#veil svg{width:54px;height:54px;overflow:visible}
-#veil .drop{fill:var(--gold);transform-origin:50% 20%;animation:dropIn 1.2s cubic-bezier(.22,1,.36,1) both}
-#veil .cup{stroke:var(--gold);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-dasharray:80;stroke-dashoffset:80;animation:draw 1.1s .25s ease forwards}
+#veil svg{width:54px;height:54px;overflow:visible;color:var(--gold)}
+#veil svg g path{transform-origin:32px 39.5px;animation:petalIn .9s cubic-bezier(.22,1,.36,1) both}
+#veil svg circle{stroke-dasharray:174;stroke-dashoffset:174;animation:draw 1.25s .1s ease forwards}
 #veil .vword{
   font-family:var(--serif);font-size:22px;letter-spacing:.34em;text-transform:uppercase;
   color:var(--gold-hi);opacity:0;animation:soft 1s .5s ease forwards;padding-left:.34em;
 }
-@keyframes dropIn{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes petalIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes soft{to{opacity:1}}
 
@@ -101,10 +267,10 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   padding:22px 0;transition:background .5s,padding .5s,box-shadow .5s;
 }
-nav.scrolled{background:rgba(23,18,9,.92);backdrop-filter:blur(14px);padding:14px 0;box-shadow:0 1px 0 var(--line-soft)}
+nav.scrolled{background:var(--scrim-nav);backdrop-filter:blur(14px);padding:14px 0;box-shadow:0 1px 0 var(--line-soft)}
 .navwrap{max-width:1240px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:12px}
-.brand svg{width:30px;height:30px;flex:none}
+.brand svg{width:30px;height:30px;flex:none;color:var(--gold)}
 .brand span{font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:.05em}
 .brand small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);font-weight:400}
 .navlinks{display:flex;align-items:center;gap:34px}
@@ -116,7 +282,7 @@ nav.scrolled{background:rgba(23,18,9,.92);backdrop-filter:blur(14px);padding:14p
   border:1px solid var(--gold);color:var(--gold-hi)!important;
   padding:11px 26px;border-radius:100px;transition:background .35s,color .35s;
 }
-.bookbtn:hover{background:var(--gold);color:var(--noir)!important}
+.bookbtn:hover{background:var(--gold);color:var(--on-accent)!important}
 #burger{display:none;background:none;border:none;cursor:pointer;width:34px;height:24px;position:relative;z-index:110}
 #burger span{position:absolute;left:0;width:100%;height:1.5px;background:var(--gold-hi);transition:.4s}
 #burger span:nth-child(1){top:4px}#burger span:nth-child(2){top:12px}#burger span:nth-child(3){top:20px}
@@ -124,7 +290,7 @@ nav.scrolled{background:rgba(23,18,9,.92);backdrop-filter:blur(14px);padding:14p
 #burger.open span:nth-child(2){opacity:0}
 #burger.open span:nth-child(3){top:12px;transform:rotate(-45deg)}
 #mobilemenu{
-  position:fixed;inset:0;background:rgba(23,18,9,.98);backdrop-filter:blur(20px);z-index:105;
+  position:fixed;inset:0;background:var(--scrim-menu);backdrop-filter:blur(20px);z-index:105;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;
   opacity:0;visibility:hidden;transition:.45s;
 }
@@ -156,8 +322,8 @@ h2 em{font-style:italic;color:var(--gold-hi)}
 [data-reveal="4"]{transition-delay:.36s}
 
 .photo{position:relative;overflow:hidden;border-radius:3px}
-.photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.04) sepia(.1);transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
-.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,18,9,.05),rgba(23,18,9,.28));pointer-events:none}
+.photo img{width:100%;height:100%;object-fit:cover;filter:var(--photo-filter);transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--photo-a),var(--photo-b));pointer-events:none}
 .photo:hover img{transform:scale(1.035)}
 
 /* ---------- hero ---------- */
@@ -168,16 +334,16 @@ h2 em{font-style:italic;color:var(--gold-hi)}
 #hero .glow{
   position:absolute;inset:0;pointer-events:none;
   background:
-    radial-gradient(48% 42% at 72% 30%,rgba(201,164,92,.13),transparent 70%),
-    radial-gradient(38% 34% at 22% 78%,rgba(167,152,192,.07),transparent 70%),
-    radial-gradient(30% 26% at 50% 55%,rgba(233,211,160,.05),transparent 70%);
+    radial-gradient(48% 42% at 72% 30%,var(--glow-a),transparent 70%),
+    radial-gradient(38% 34% at 22% 78%,var(--glow-b),transparent 70%),
+    radial-gradient(30% 26% at 50% 55%,var(--glow-c),transparent 70%);
   animation:breathe 9s ease-in-out infinite alternate;
 }
 @keyframes breathe{from{opacity:.75;transform:scale(1)}to{opacity:1;transform:scale(1.05)}}
 #hero .heroimg{
-  position:absolute;inset:0;z-index:-1;opacity:.16;
+  position:absolute;inset:0;z-index:-1;opacity:var(--hero-opacity);
   background:url("img/studio-candlelight.jpg") center 40%/cover no-repeat;
-  filter:sepia(.35) saturate(.7) brightness(.6) contrast(1.1);
+  filter:var(--hero-filter);
   mask-image:radial-gradient(85% 85% at 50% 45%,#000 30%,transparent 100%);
   -webkit-mask-image:radial-gradient(85% 85% at 50% 45%,#000 30%,transparent 100%);
 }
@@ -209,10 +375,10 @@ h1 em{font-style:italic;color:var(--gold-hi)}
   font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
   padding:17px 38px;border-radius:100px;transition:.35s;
 }
-.btn-gold{background:var(--gold);color:var(--noir)}
-.btn-gold:hover{background:var(--gold-hi);transform:translateY(-2px);box-shadow:0 14px 34px rgba(201,164,92,.22)}
+.btn-gold{background:var(--gold);color:var(--on-accent)}
+.btn-gold:hover{background:var(--gold-hi);transform:translateY(-2px);box-shadow:0 14px 34px var(--shadow-cta)}
 .btn-ghost{border:1px solid var(--line);color:var(--gold-hi)}
-.btn-ghost:hover{border-color:var(--gold);background:rgba(201,164,92,.07)}
+.btn-ghost:hover{border-color:var(--gold);background:var(--tint)}
 .hero-cred{
   margin-top:70px;display:flex;gap:34px;flex-wrap:wrap;
   font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);
@@ -262,12 +428,12 @@ h1 em{font-style:italic;color:var(--gold-hi)}
 
 /* ---------- services ---------- */
 #services{background:var(--noir2)}
-#services::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 85% 10%,rgba(201,164,92,.06),transparent 70%);pointer-events:none}
+#services::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 85% 10%,var(--tint),transparent 70%);pointer-events:none}
 .svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:70px}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
 .svc-card{
   border:1px solid var(--line-soft);border-radius:4px;padding:52px 48px;
-  background:linear-gradient(180deg,rgba(40,32,20,.5),rgba(31,24,16,.2));
+  background:linear-gradient(180deg,var(--card-a),var(--card-b));
   transition:border-color .4s,transform .4s;
 }
 .svc-card:hover{border-color:var(--line);transform:translateY(-4px)}
@@ -294,7 +460,7 @@ h1 em{font-style:italic;color:var(--gold-hi)}
   border:1px solid var(--line-soft);border-radius:4px;padding:26px 20px;text-align:center;
   transition:border-color .4s,background .4s;
 }
-.addon:hover{border-color:var(--line);background:rgba(201,164,92,.05)}
+.addon:hover{border-color:var(--line);background:var(--tint-soft)}
 .addon .nm{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ivory);font-weight:400;margin-bottom:8px}
 .addon .pr{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--gold-hi)}
 
@@ -313,9 +479,33 @@ h1 em{font-style:italic;color:var(--gold-hi)}
 .mob-point b{display:block;font-weight:500;font-size:15.5px;letter-spacing:.02em}
 .mob-point p{font-size:14px;color:var(--ink)}
 
+.mob-cta{margin-top:44px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.mob-note{font-size:13px;color:var(--ink-dim);letter-spacing:.02em;max-width:230px;line-height:1.5}
+
+/* ---------- booking gateway ---------- */
+#book{background:var(--noir2);position:relative}
+#book::before{content:"";position:absolute;inset:0;background:radial-gradient(55% 45% at 50% 0%,var(--tint),transparent 70%);pointer-events:none}
+.book-head{text-align:center;max-width:620px;margin:0 auto 54px}
+.book-head .eyebrow{justify-content:center}
+.book-head .eyebrow::before{content:"";height:1px;flex:0 0 56px;background:linear-gradient(90deg,transparent,var(--gold))}
+.book-frame{
+  position:relative;max-width:1000px;margin:0 auto;
+  border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  background:var(--noir);box-shadow:0 26px 70px var(--shadow-frame);
+}
+.book-frame iframe{display:block;width:100%;height:748px;border:0;background:#fff}
+.book-fallback{
+  margin-top:26px;text-align:center;font-size:13.5px;color:var(--ink-dim);
+}
+.book-fallback a{color:var(--gold);border-bottom:1px solid var(--line)}
+.book-fallback a:hover{color:var(--gold-hi)}
+@media(max-width:640px){
+  .book-frame iframe{height:640px}
+}
+
 /* ---------- products ---------- */
 #bodycare{background:var(--noir2)}
-#bodycare::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 40% at 12% 90%,rgba(167,152,192,.06),transparent 70%);pointer-events:none}
+#bodycare::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 40% at 12% 90%,var(--tint-lav),transparent 70%);pointer-events:none}
 .prod-head{text-align:center;max-width:640px;margin:0 auto 74px}
 .prod-head .eyebrow{justify-content:center}
 .prod-head .eyebrow::before{content:"";height:1px;flex:0 0 56px;background:linear-gradient(90deg,transparent,var(--gold))}
@@ -371,7 +561,7 @@ h1 em{font-style:italic;color:var(--gold-hi)}
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .why-card{
   border:1px solid var(--line-soft);border-radius:4px;padding:34px 28px;
-  background:linear-gradient(180deg,rgba(40,32,20,.35),transparent);
+  background:linear-gradient(180deg,var(--card-a),transparent);
   transition:border-color .4s,transform .4s;
 }
 .why-card:hover{border-color:var(--line);transform:translateY(-4px)}
@@ -387,7 +577,7 @@ h1 em{font-style:italic;color:var(--gold-hi)}
 .twall{columns:2;column-gap:26px;max-width:980px;margin:80px auto 0}
 .tcard{
   break-inside:avoid;margin:0 0 26px;border:1px solid var(--line-soft);border-radius:4px;
-  padding:34px 34px 30px;background:linear-gradient(180deg,rgba(40,32,20,.4),rgba(31,24,16,.15));
+  padding:34px 34px 30px;background:linear-gradient(180deg,var(--card-a),var(--card-b));
   transition:border-color .4s;
 }
 .tcard:hover{border-color:var(--line)}
@@ -458,7 +648,7 @@ footer{
   border-top:1px solid var(--line-soft);padding:74px 0 40px;background:var(--noir);
 }
 .f-grid{display:flex;justify-content:space-between;gap:50px;flex-wrap:wrap;align-items:flex-start}
-.f-brand svg{width:40px;height:40px;margin-bottom:18px}
+.f-brand svg{width:40px;height:40px;margin-bottom:18px;color:var(--gold)}
 .f-brand .tag{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-hi)}
 .f-col b{display:block;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);font-weight:500;margin-bottom:18px}
 .f-col a,.f-col span{display:block;font-size:14px;color:var(--ink);padding:5px 0;transition:color .3s}
@@ -473,9 +663,40 @@ footer{
 #bookbar{
   position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;
   padding:14px 20px calc(14px + env(safe-area-inset-bottom));
-  background:rgba(23,18,9,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line-soft);
+  background:var(--scrim-bar);backdrop-filter:blur(14px);border-top:1px solid var(--line-soft);
 }
 #bookbar .btn{width:100%;justify-content:center}
+
+/* ---------- palette picker (REVIEW TOOL - delete this block and #palette to remove) ---------- */
+#palette{
+  position:fixed;left:20px;bottom:20px;z-index:120;
+  background:var(--scrim-menu);backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:100px;
+  padding:9px 10px 9px 16px;display:flex;align-items:center;gap:12px;
+  box-shadow:0 12px 34px var(--shadow-frame);
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-dim);font-weight:500;
+  transition:opacity .3s;
+}
+#palette .pl{white-space:nowrap}
+#palette .sw{display:flex;gap:7px}
+#palette button{
+  width:26px;height:26px;border-radius:50%;cursor:pointer;padding:0;
+  border:1px solid var(--line);position:relative;overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+}
+#palette button:hover{transform:scale(1.12)}
+#palette button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--noir),0 0 0 3.5px var(--gold)}
+#palette button i{position:absolute;inset:0;display:block}
+#palette button i::after{content:"";position:absolute;right:0;top:0;bottom:0;width:50%}
+#palette .hide{
+  border:none;background:none;color:var(--ink-dim);cursor:pointer;
+  font-size:15px;line-height:1;padding:0 4px 2px;
+}
+#palette .hide:hover{color:var(--gold)}
+@media(max-width:640px){
+  #palette{left:12px;right:12px;bottom:auto;top:76px;justify-content:center;padding:8px 12px}
+  #palette .pl{display:none}
+}
 
 /* ---------- responsive ---------- */
 @media(max-width:1000px){
@@ -523,8 +744,13 @@ footer{
 <!-- veil -->
 <div id="veil" aria-hidden="true">
   <svg viewBox="0 0 64 64">
-    <path class="drop" d="M32 8c4.4 6.4 6.9 10.6 6.9 14.5 0 4.3-3.1 7.8-6.9 7.8s-6.9-3.5-6.9-7.8C25.1 18.6 27.6 14.4 32 8z"/>
-    <path class="cup" d="M10 40c6.3 8.8 13.8 12.6 22 12.6S47.7 48.8 54 40"/>
+    <circle cx="32" cy="32" r="27.5" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".5"/>
+    <g fill="currentColor">
+      <path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z"/>
+      <path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z" transform="rotate(-48 32 39.5)"/>
+      <path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z" transform="rotate(48 32 39.5)"/>
+    </g>
+    <path d="M21.5 43.5 C26 47 38 47 42.5 43.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
   </svg>
   <div class="vword">Gifted Touch</div>
 </div>
@@ -533,20 +759,17 @@ footer{
 <nav id="nav">
   <div class="navwrap">
     <a class="brand" href="#hero" aria-label="Gifted Touch home">
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M32 8c4.4 6.4 6.9 10.6 6.9 14.5 0 4.3-3.1 7.8-6.9 7.8s-6.9-3.5-6.9-7.8C25.1 18.6 27.6 14.4 32 8z" fill="#C9A45C"/>
-        <path d="M10 40c6.3 8.8 13.8 12.6 22 12.6S47.7 48.8 54 40" stroke="#C9A45C" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-      </svg>
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27.5" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".5"/><g fill="currentColor"><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z"/><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z" transform="rotate(-48 32 39.5)"/><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z" transform="rotate(48 32 39.5)"/></g><path d="M21.5 43.5 C26 47 38 47 42.5 43.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
       <span>Gifted Touch<small>Therapeutic Massage</small></span>
     </a>
     <div class="navlinks">
       <a href="#story">The Story</a>
       <a href="#services">Services</a>
-      <a href="#mobile">Mobile</a>
+      <a href="#mobile">Corporate</a>
       <a href="#bodycare">Body Care</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
-      <a class="bookbtn" href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Book a Session</a>
+      <a class="bookbtn" href="#book">Book a Session</a>
     </div>
     <button id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -554,11 +777,11 @@ footer{
 <div id="mobilemenu">
   <a href="#story">The Story</a>
   <a href="#services">Services</a>
-  <a href="#mobile">Mobile</a>
+  <a href="#mobile">Corporate</a>
   <a href="#bodycare">Body Care</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
-  <a class="bookbtn" href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Book a Session</a>
+  <a class="bookbtn" href="#book">Book a Session</a>
 </div>
 
 <!-- hero -->
@@ -572,17 +795,17 @@ footer{
       <span class="ln"><span><em>A gifted touch.</em></span></span>
     </h1>
     <p class="hero-sub" id="herosub">
-      Board certified therapeutic massage, in studio and at your door.
-      Helping you maintain your total well-being for nearly twenty years.
+      Board certified therapeutic massage in Huntsville, Alabama.
+      Helping you maintain your total well-being for more than twenty years.
     </p>
     <div class="hero-ctas" id="heroctas">
-      <a class="btn btn-gold" href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Book a Session</a>
+      <a class="btn btn-gold" href="#book">Book a Session</a>
       <a class="btn btn-ghost" href="#services">View Services</a>
     </div>
     <div class="hero-cred" id="herocred">
       <span><i></i>Board Certified · NCTMB</span>
       <span><i></i>Alabama LMT 1745</span>
-      <span><i></i>Studio + Mobile</span>
+      <span><i></i>Studio + Corporate</span>
     </div>
   </div>
   <div id="scrollhint">Scroll</div>
@@ -623,9 +846,8 @@ footer{
         <p class="lede" data-reveal="4">
           For more than twenty years, <strong>Etete Agbabune Torres, LMT</strong> has carried
           that gift through Huntsville, in her studio inside the Huntsville Pool and Land
-          Therapy facility on Westmill Drive, and in homes and workplaces across the city.
-          She believes the body is the temple of God, and every session is unhurried,
-          reverent, and shaped to what yours needs.
+          Therapy facility on Westmill Drive. She believes the body is the temple of God,
+          and every session is unhurried, reverent, and shaped to what yours needs.
         </p>
         <div class="credrow" data-reveal="4">
           <span class="cred">Board Certified · NCTMB 403638-00</span>
@@ -733,9 +955,9 @@ footer{
         <div class="price-row"><span class="dur">60 minutes</span><b>$110</b></div>
       </div>
       <div class="svc-card" data-reveal="2">
-        <h3>Hot Stone Massage</h3>
+        <h3>Warm Stone Massage</h3>
         <div class="whisper">Warmth · Deep Release</div>
-        <p>Smooth heated stones carry warmth deep into the muscle, melting tension
+        <p>Smooth warmed stones carry gentle heat deep into the muscle, melting tension
         that hands alone take longer to reach. Pure comfort, start to finish.</p>
         <div class="price-row"><span class="dur">60 minutes</span><b>$130</b></div>
       </div>
@@ -752,9 +974,8 @@ footer{
       </div>
     </div>
     <div class="svc-note" data-reveal>
-      <b>Insurance clients welcome</b> · Sports &amp; prenatal modalities available ·
-      Sessions by appointment ·
-      <a href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener" style="color:var(--gold);border-bottom:1px solid var(--line)">Book online</a>
+      <b>Insurance clients welcome</b> · Sessions by appointment ·
+      <a href="#book" style="color:var(--gold);border-bottom:1px solid var(--line)">Book online</a>
     </div>
   </div>
 </section>
@@ -764,26 +985,30 @@ footer{
   <div class="wrap">
     <div class="grid">
       <div>
-        <div class="eyebrow" data-reveal><span class="num">04</span>Mobile &amp; Chair Massage</div>
-        <h2 data-reveal="2">The studio comes<br><em>to you.</em></h2>
+        <div class="eyebrow" data-reveal><span class="num">04</span>Corporate &amp; Chair Massage</div>
+        <h2 data-reveal="2">Bring the calm<br><em>to your team.</em></h2>
         <p class="lede" data-reveal="3">
-          Some healing should not have to wait for a drive across town. Etete brings the
-          full Gifted Touch experience to your home, and seated chair massage to offices,
-          teams, and events across Huntsville.
+          Seated chair massage for offices, staff appreciation days, wellness fairs,
+          conferences, and church events across Huntsville. No table, no oils, no
+          changing. Your team stays dressed and gets back to work loose and clear headed.
         </p>
         <div class="mob-points">
           <div class="mob-point" data-reveal="3">
             <i>i</i>
-            <div><b>In-home sessions</b><p>The same table, oils, and unhurried care, set up wherever you are most comfortable.</p></div>
+            <div><b>Fifteen minutes per chair</b><p>Neck, shoulders, back, and arms. Enough to undo a week at a desk, short enough to run a whole floor in an afternoon.</p></div>
           </div>
           <div class="mob-point" data-reveal="4">
             <i>ii</i>
-            <div><b>Workplace chair massage</b><p>Fifteen relaxing minutes per chair. A team of therapists is available for larger events.</p></div>
+            <div><b>A team for larger events</b><p>Etete partners with additional licensed therapists, so several chairs can run at once for bigger groups.</p></div>
           </div>
           <div class="mob-point" data-reveal="4">
             <i>iii</i>
-            <div><b>Simple travel fee</b><p>A $25 mileage fee covers travel within the Huntsville area. Ask when you book.</p></div>
+            <div><b>Huntsville and nearby</b><p>Travel beyond 20 miles may carry an additional fee. Ask when you enquire and you will get a flat quote up front.</p></div>
           </div>
+        </div>
+        <div class="mob-cta" data-reveal="4">
+          <a class="btn btn-gold" href="mailto:gifted70touch@gmail.com?subject=Corporate%20chair%20massage%20enquiry">Enquire for Your Team</a>
+          <span class="mob-note">In-home sessions are available on request. Just ask.</span>
         </div>
       </div>
       <div class="photos">
@@ -848,10 +1073,7 @@ footer{
       </div>
       <div class="prod" data-reveal="4">
         <div class="photo" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--noir3),var(--noir))">
-          <svg viewBox="0 0 64 64" style="width:74px;height:74px;opacity:.85">
-            <path d="M32 8c4.4 6.4 6.9 10.6 6.9 14.5 0 4.3-3.1 7.8-6.9 7.8s-6.9-3.5-6.9-7.8C25.1 18.6 27.6 14.4 32 8z" fill="#C9A45C"/>
-            <path d="M10 40c6.3 8.8 13.8 12.6 22 12.6S47.7 48.8 54 40" stroke="#C9A45C" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27.5" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".5"/><g fill="currentColor"><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z"/><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z" transform="rotate(-48 32 39.5)"/><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z" transform="rotate(48 32 39.5)"/></g><path d="M21.5 43.5 C26 47 38 47 42.5 43.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
         </div>
         <div class="info">
           <div class="cat">Coming Soon</div>
@@ -933,8 +1155,34 @@ footer{
     <p data-reveal="3">Treat someone you love to an hour of being cared for.
     Gift certificates are available for every service.</p>
     <div data-reveal="4">
-      <a class="btn btn-gold" href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Purchase a Gift Certificate</a>
+      <a class="btn btn-gold" href="#book">Purchase a Gift Certificate</a>
     </div>
+  </div>
+</section>
+
+<!-- booking gateway -->
+<section id="book">
+  <div class="wrap">
+    <div class="book-head">
+      <div class="eyebrow" data-reveal><span class="num">08</span>Book Your Session</div>
+      <h2 data-reveal="2">Pick your time.<br><em>The rest is rest.</em></h2>
+      <p class="lede" data-reveal="3" style="margin:0 auto">
+        Choose a service, pick a day that suits you, and you are booked.
+        You will get a confirmation by email straight away.
+      </p>
+    </div>
+    <div class="book-frame" data-reveal="2">
+      <iframe
+        src="https://giftedtouchtherapeuticmassage.clinicsense.com/book/"
+        title="Book an appointment with Gifted Touch Therapeutic Massage"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p class="book-fallback" data-reveal="3">
+      Trouble with the form?
+      <a href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Open the booking page in a new tab</a>
+      or call <a href="tel:+12563260890">256.326.0890</a>.
+    </p>
   </div>
 </section>
 
@@ -942,15 +1190,16 @@ footer{
 <section id="faq">
   <div class="wrap">
     <div class="faq-head">
-      <div class="eyebrow" data-reveal><span class="num">08</span>Frequently Asked Questions</div>
+      <div class="eyebrow" data-reveal><span class="num">09</span>Frequently Asked Questions</div>
       <h2 data-reveal="2">Before your<br><em>first session.</em></h2>
     </div>
     <div class="faq-list" data-reveal="2">
       <details>
         <summary>What types of massage do you offer?<i></i></summary>
-        <p>A wide range of techniques tailored to your needs: Swedish massage, Deep Tissue
-        massage, Hot Stone massage, Sports massage, Prenatal massage, and more. Each massage
-        is customized to address your specific concerns and preferences.</p>
+        <p>Swedish relaxation massage, deep tissue, prenatal, and warm stone, plus seated
+        chair massage for corporate events. Every session is customized to your specific
+        concerns and preferences, and add-ons like scalp, facial, and foot work can be
+        combined with any of them.</p>
       </details>
       <details>
         <summary>How long is a typical session?<i></i></summary>
@@ -1015,7 +1264,7 @@ footer{
   <div class="wrap">
     <div class="grid">
       <div>
-        <div class="eyebrow" data-reveal><span class="num">09</span>Visit &amp; Book</div>
+        <div class="eyebrow" data-reveal><span class="num">10</span>Visit the Studio</div>
         <h2 data-reveal="2">The table<br><em>is ready.</em></h2>
         <div class="c-list" data-reveal="3">
           <div class="c-item">
@@ -1032,11 +1281,11 @@ footer{
           </div>
           <div class="c-item">
             <span class="lbl">Hours</span>
-            <span class="val">By appointment<small>Studio &amp; mobile sessions</small></span>
+            <span class="val">By appointment<small>Studio sessions &amp; corporate events</small></span>
           </div>
         </div>
         <div class="c-cta" data-reveal="4">
-          <a class="btn btn-gold" href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Book Online</a>
+          <a class="btn btn-gold" href="#book">Book Online</a>
           <a class="btn btn-ghost" href="tel:+12563260890">Call the Studio</a>
         </div>
       </div>
@@ -1052,23 +1301,20 @@ footer{
   <div class="wrap">
     <div class="f-grid">
       <div class="f-brand">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M32 8c4.4 6.4 6.9 10.6 6.9 14.5 0 4.3-3.1 7.8-6.9 7.8s-6.9-3.5-6.9-7.8C25.1 18.6 27.6 14.4 32 8z" fill="#C9A45C"/>
-          <path d="M10 40c6.3 8.8 13.8 12.6 22 12.6S47.7 48.8 54 40" stroke="#C9A45C" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-        </svg>
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27.5" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".5"/><g fill="currentColor"><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z"/><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z" transform="rotate(-48 32 39.5)"/><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z" transform="rotate(48 32 39.5)"/></g><path d="M21.5 43.5 C26 47 38 47 42.5 43.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
         <div class="tag">Anointed hands. A gifted touch.</div>
       </div>
       <div class="f-col">
         <b>Explore</b>
         <a href="#story">The Story</a>
         <a href="#services">Services &amp; Rates</a>
-        <a href="#mobile">Mobile &amp; Chair</a>
+        <a href="#mobile">Corporate &amp; Chair</a>
         <a href="#bodycare">Body Care</a>
         <a href="#faq">FAQ</a>
       </div>
       <div class="f-col">
         <b>Book</b>
-        <a href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Book a Session</a>
+        <a href="#book">Book a Session</a>
         <a href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Gift Certificates</a>
         <a href="tel:+12563260890">256.326.0890</a>
         <a href="mailto:gifted70touch@gmail.com">gifted70touch@gmail.com</a>
@@ -1088,9 +1334,16 @@ footer{
   </div>
 </footer>
 
+<!-- palette picker · REVIEW TOOL · delete this element and its CSS/JS block to remove -->
+<div id="palette" role="group" aria-label="Preview colour palette">
+  <span class="pl">Palette</span>
+  <span class="sw" id="swatches"></span>
+  <button class="hide" id="palhide" aria-label="Hide palette picker" title="Hide">&times;</button>
+</div>
+
 <!-- mobile book bar -->
 <div id="bookbar">
-  <a class="btn btn-gold" href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Book a Session</a>
+  <a class="btn btn-gold" href="#book">Book a Session</a>
 </div>
 
 <script>
@@ -1164,9 +1417,12 @@ footer{
   function sizeStage(){
     var st = document.getElementById('tstage'), h = 0;
     words.forEach(function(w){
-      w.style.position='static'; w.style.opacity='1';
+      /* measure with visibility:hidden so inactive slides never flash into view */
+      w.style.visibility='hidden';
+      w.style.position='static';
       h = Math.max(h, w.offsetHeight);
-      w.style.position=''; w.style.opacity='';
+      w.style.position='';
+      w.style.visibility='';
     });
     st.style.minHeight = (h+10)+'px';
   }
@@ -1174,6 +1430,49 @@ footer{
   window.addEventListener('resize',sizeStage);
 
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---- palette picker · REVIEW TOOL · delete this block to remove ---- */
+  var THEMES = [
+    {k:'vesper',  n:'Vesper Bronze',  bg:'#F9F5EE', ac:'#8F5A2A', ink:'#0E3C3B'},
+    {k:'dawn',    n:'Anointed Dawn',  bg:'#FCF7F0', ac:'#9C5524', ink:'#3B2242'},
+    {k:'balm',    n:'Morning Balm',   bg:'#F8F5EF', ac:'#8A5A2B', ink:'#1E2420'},
+    {k:'heather', n:'Lavender Linen', bg:'#F8F5EF', ac:'#856022', ink:'#2F2036'}
+  ];
+  var picker = document.getElementById('palette');
+  var sw = document.getElementById('swatches');
+  var saved = null;
+  try { saved = localStorage.getItem('gt_theme'); } catch(e){}
+  var current = saved || 'vesper';
+  document.documentElement.setAttribute('data-theme', current);
+
+  THEMES.forEach(function(t){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.title = t.n;
+    b.setAttribute('aria-label', t.n);
+    b.setAttribute('aria-pressed', String(t.k === current));
+    b.style.background = t.bg;
+    var i = document.createElement('i');
+    i.style.background = t.ink;
+    i.style.clipPath = 'polygon(0 100%, 100% 100%, 100% 62%, 0 62%)';
+    b.appendChild(i);
+    var j = document.createElement('i');
+    j.style.background = t.ac;
+    j.style.clipPath = 'polygon(0 62%, 100% 62%, 100% 30%, 0 30%)';
+    b.appendChild(j);
+    b.addEventListener('click', function(){
+      current = t.k;
+      document.documentElement.setAttribute('data-theme', current);
+      try { localStorage.setItem('gt_theme', current); } catch(e){}
+      Array.prototype.forEach.call(sw.children, function(el, idx){
+        el.setAttribute('aria-pressed', String(THEMES[idx].k === current));
+      });
+    });
+    sw.appendChild(b);
+  });
+  document.getElementById('palhide').addEventListener('click', function(){
+    picker.style.display = 'none';
+  });
 })();
 </script>
 </body>
