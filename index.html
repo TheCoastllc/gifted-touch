@@ -476,20 +476,36 @@ h1.play .br{animation:breathIn .5s .9s both}
 .book-head{text-align:center;max-width:620px;margin:0 auto 54px}
 .book-head .eyebrow{justify-content:center}
 .book-head .eyebrow::before{content:"";height:1px;flex:0 0 56px;background:linear-gradient(90deg,transparent,var(--gold))}
-.book-frame{
-  position:relative;max-width:1000px;margin:0 auto;
-  border:1px solid var(--line);border-radius:6px;overflow:hidden;
-  background:var(--noir);box-shadow:0 26px 70px var(--shadow-frame);
+.book-routes{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1080px;margin:0 auto;
 }
-.book-frame iframe{display:block;width:100%;height:748px;border:0;background:#fff}
+.book-card{
+  display:flex;flex-direction:column;align-items:flex-start;
+  border:1px solid var(--line-soft);border-radius:4px;padding:38px 34px 32px;
+  background:linear-gradient(180deg,var(--card-a),var(--card-b));
+  transition:border-color .4s,transform .4s,box-shadow .4s;
+}
+.book-card:hover{border-color:var(--line);transform:translateY(-4px);box-shadow:0 14px 40px var(--shadow-frame)}
+.book-card-primary{border-color:var(--line)}
+.bc-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border:1px solid var(--line);border-radius:50%;
+  font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold);margin-bottom:22px;
+}
+.book-card h3{font-family:var(--serif);font-weight:500;font-size:27px;margin-bottom:10px;color:var(--ivory)}
+.book-card p{font-size:14.5px;color:var(--ink);margin-bottom:26px}
+.bc-go{
+  margin-top:auto;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+  font-weight:500;color:var(--gold);display:inline-flex;align-items:center;gap:10px;
+}
+.bc-go::after{content:"";width:18px;height:1px;background:var(--gold);transition:width .35s}
+.book-card:hover .bc-go::after{width:30px}
+.book-card-primary .bc-go{color:var(--gold-hi)}
 .book-fallback{
-  margin-top:26px;text-align:center;font-size:13.5px;color:var(--ink-dim);
+  margin-top:44px;text-align:center;font-size:13.5px;color:var(--ink-dim);
+  max-width:52ch;margin-left:auto;margin-right:auto;
 }
-.book-fallback a{color:var(--gold);border-bottom:1px solid var(--line)}
-.book-fallback a:hover{color:var(--gold-hi)}
-@media(max-width:640px){
-  .book-frame iframe{height:640px}
-}
+@media(max-width:900px){.book-routes{grid-template-columns:1fr}}
 
 /* ---------- products ---------- */
 #bodycare{background:var(--noir2)}
@@ -1154,7 +1170,7 @@ footer{
     <p data-reveal="3">Treat someone you love to an hour of being cared for.
     Gift certificates are available for every service.</p>
     <div data-reveal="4">
-      <a class="btn btn-gold" href="#book">Purchase a Gift Certificate</a>
+      <a class="btn btn-gold" href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Purchase a Gift Certificate</a>
     </div>
   </div>
 </section>
@@ -1170,17 +1186,34 @@ footer{
         You will get a confirmation by email straight away.
       </p>
     </div>
-    <div class="book-frame" data-reveal="2">
-      <iframe
-        src="https://giftedtouchtherapeuticmassage.clinicsense.com/book/"
-        title="Book an appointment with Gifted Touch Therapeutic Massage"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="book-routes">
+      <a class="book-card book-card-primary" data-reveal="2"
+         href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/"
+         target="_blank" rel="noopener">
+        <span class="bc-num">i</span>
+        <h3>Book online</h3>
+        <p>See real availability and confirm instantly. Opens Etete's secure
+        scheduler in a new tab.</p>
+        <span class="bc-go">Open the scheduler</span>
+      </a>
+      <a class="book-card" data-reveal="3" href="tel:+12563260890">
+        <span class="bc-num">ii</span>
+        <h3>Call or text</h3>
+        <p>Prefer to speak with her, or booking for someone else? Etete answers
+        her own phone.</p>
+        <span class="bc-go">256.326.0890</span>
+      </a>
+      <a class="book-card" data-reveal="4" href="mailto:gifted70touch@gmail.com?subject=Booking%20enquiry">
+        <span class="bc-num">iii</span>
+        <h3>Email</h3>
+        <p>For corporate chair massage, gift certificates, or anything that
+        needs a conversation first.</p>
+        <span class="bc-go">gifted70touch@gmail.com</span>
+      </a>
     </div>
     <p class="book-fallback" data-reveal="3">
-      Trouble with the form?
-      <a href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Open the booking page in a new tab</a>
-      or call <a href="tel:+12563260890">256.326.0890</a>.
+      New clients are asked a few health questions before the first session, so
+      Etete can shape the work to your body.
     </p>
   </div>
 </section>
@@ -1284,7 +1317,7 @@ footer{
           </div>
         </div>
         <div class="c-cta" data-reveal="4">
-          <a class="btn btn-gold" href="#book">Book Online</a>
+          <a class="btn btn-gold" href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Book Online</a>
           <a class="btn btn-ghost" href="tel:+12563260890">Call the Studio</a>
         </div>
       </div>
