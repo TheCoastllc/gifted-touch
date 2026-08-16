@@ -82,6 +82,9 @@
   --shadow-cta:rgba(138,86,34,.26);
   --shadow-frame:rgba(14,60,59,.10);
   --veil-bg:#FAF6EE;
+  --gift-bg:#E9DCC4;
+  --gift-accent:#7C4E1F;
+  --gift-ink:#4F5B5A;
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost',system-ui,sans-serif;
 }
@@ -120,6 +123,9 @@
   --shadow-cta:rgba(138,86,34,.26);
   --shadow-frame:rgba(14,60,59,.10);
   --veil-bg:#FAF6EE;
+  --gift-bg:#E9DCC4;
+  --gift-accent:#7C4E1F;
+  --gift-ink:#4F5B5A;
 }
 
 /* Porcelain & Plum */
@@ -156,6 +162,9 @@
   --shadow-cta:rgba(126,96,24,.26);
   --shadow-frame:rgba(58,33,64,.10);
   --veil-bg:#F6F5F3;
+  --gift-bg:#E0DAE4;
+  --gift-accent:#6E5415;
+  --gift-ink:#5D5464;
 }
 
 /* Clay & Terracotta */
@@ -192,6 +201,9 @@
   --shadow-cta:rgba(168,72,31,.26);
   --shadow-frame:rgba(59,42,32,.10);
   --veil-bg:#FCF1E6;
+  --gift-bg:#F0D6BB;
+  --gift-accent:#903E1B;
+  --gift-ink:#61544B;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -681,12 +693,77 @@ h1.play .br{animation:breathIn .5s .9s both}
 }
 
 /* ---------- gift band ---------- */
+/* the one section that breaks the noir/noir2 alternation, so it separates
+   from the testimonial wall above and the booking cards below */
 #gift{
-  padding:100px 0;background:linear-gradient(180deg,var(--noir2),var(--noir));
-  border-top:1px solid var(--line-soft);text-align:center;
+  padding:132px 0;background:var(--gift-bg);
+  border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
+  position:relative;overflow:hidden;
 }
-#gift h2{margin-bottom:14px}
-#gift p{color:var(--ink);max-width:480px;margin:0 auto 40px;font-size:15.5px}
+#gift::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 60% at 82% 12%,var(--tint),transparent 70%);
+}
+.gift-grid{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:minmax(0,420px) 1fr;
+  gap:76px;align-items:center;
+}
+#gift .eyebrow{color:var(--gift-accent);margin-bottom:24px}
+#gift .eyebrow .num{color:var(--gift-ink)}
+#gift .eyebrow::after{background:linear-gradient(90deg,var(--gift-accent),transparent)}
+#gift h2{margin-bottom:18px}
+#gift .lede{color:var(--gift-ink);max-width:46ch;font-size:16px}
+
+/* the certificate, drawn rather than photographed: infinitely sharp, themeable,
+   and it shows the thing the buyer actually receives */
+.gift-cert{
+  position:relative;aspect-ratio:1.6/1;border-radius:5px;
+  background:linear-gradient(150deg,var(--noir3),var(--noir));
+  border:1px solid var(--line);
+  box-shadow:0 26px 60px var(--shadow-frame),0 2px 0 0 var(--line-soft);
+  padding:30px 32px;display:flex;flex-direction:column;
+  transform:rotate(-2.4deg);
+  transition:transform 1s cubic-bezier(.22,1,.36,1),box-shadow .6s;
+}
+.gift-cert.in{transform:rotate(0deg)}
+.gift-cert:hover{transform:rotate(0deg) translateY(-5px);box-shadow:0 34px 74px var(--shadow-frame)}
+.gift-cert::after{
+  content:"";position:absolute;inset:9px;border:1px solid var(--line-soft);
+  border-radius:3px;pointer-events:none;
+}
+.gc-top{display:flex;align-items:center;gap:11px}
+.gc-top svg{width:26px;height:26px;color:var(--gold);flex:none}
+.gc-name{font-family:var(--serif);font-size:17px;font-weight:500;letter-spacing:.05em;color:var(--ivory);line-height:1.1}
+.gc-name small{display:block;font-family:var(--sans);font-size:7.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);font-weight:400}
+.gc-mid{margin-top:auto}
+.gc-label{font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);font-weight:500}
+.gc-amount{
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(30px,4vw,42px);line-height:1;color:var(--gold-hi);margin-top:6px;
+}
+.gc-rule{margin-top:14px;height:1px;background:var(--line-soft)}
+.gc-foot{
+  margin-top:12px;display:flex;justify-content:space-between;gap:14px;
+  font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);
+}
+
+/* denomination chips, same family as the .cred pills in the story section */
+.gift-chips{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 34px}
+.gift-chip{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  border:1px solid var(--line);color:var(--gift-accent);
+  border-radius:100px;padding:9px 18px;background:transparent;
+}
+.gift-chip-any{color:var(--gift-ink);border-style:dashed}
+#gift .btn-gold:hover{box-shadow:0 14px 34px var(--shadow-cta)}
+.gift-note{margin-top:18px;font-size:12.5px;color:var(--gift-ink)}
+
+@media(max-width:900px){
+  #gift{padding:96px 0}
+  .gift-grid{grid-template-columns:1fr;gap:46px}
+  .gift-cert{max-width:400px;transform:rotate(-1.6deg)}
+}
 
 /* ---------- contact ---------- */
 #contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
@@ -1272,12 +1349,41 @@ footer{
 <!-- gift band -->
 <section id="gift">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center" data-reveal><span class="num">08</span>Gift Certificates</div>
-    <h2 data-reveal="2">Give the gift <em>of relaxation.</em></h2>
-    <p data-reveal="3">Treat someone you love to an hour of being cared for.
-    Gift certificates are available for every service.</p>
-    <div data-reveal="4">
-      <a class="btn btn-gold" href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Purchase a Gift Certificate</a>
+    <div class="gift-grid">
+      <figure class="gift-cert" id="giftcert" data-reveal>
+        <div class="gc-top">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27.5" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".5"/><g fill="currentColor"><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z"/><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z" transform="rotate(-48 32 39.5)"/><path d="M32 21 C35.8 27.2 36.8 31.8 32 37.4 C27.2 31.8 28.2 27.2 32 21 Z" transform="rotate(48 32 39.5)"/></g><path d="M21.5 43.5 C26 47 38 47 42.5 43.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span class="gc-name">Gifted Touch<small>Therapeutic Massage</small></span>
+        </div>
+        <div class="gc-mid">
+          <div class="gc-label">Gift Certificate</div>
+          <div class="gc-amount">One hour, cared for</div>
+          <div class="gc-rule"></div>
+          <div class="gc-foot">
+            <span>Huntsville, Alabama</span>
+            <span>Redeemable on any service</span>
+          </div>
+        </div>
+      </figure>
+      <div class="gift-copy">
+        <div class="eyebrow" data-reveal><span class="num">08</span>Gift Certificates</div>
+        <h2 data-reveal="2">Give an hour<br><em>of being cared for.</em></h2>
+        <p class="lede" data-reveal="3">
+          The easiest gift to get right. It works on any service, from a thirty
+          minute relaxation session to ninety minutes of deep tissue, and the
+          person you give it to picks their own time.
+        </p>
+        <div class="gift-chips" data-reveal="3">
+          <span class="gift-chip">$55</span>
+          <span class="gift-chip">$110</span>
+          <span class="gift-chip">$165</span>
+          <span class="gift-chip gift-chip-any">Any amount</span>
+        </div>
+        <div data-reveal="4">
+          <a class="btn btn-gold" href="https://giftedtouchtherapeuticmassage.clinicsense.com/book/" target="_blank" rel="noopener">Purchase a Gift Certificate</a>
+        </div>
+        <p class="gift-note" data-reveal="4">Sent by email, so it arrives the same day.</p>
+      </div>
     </div>
   </div>
 </section>
