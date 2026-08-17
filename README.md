@@ -1,6 +1,6 @@
 # Gifted Touch Therapeutic Massage
 
-Website for **Gifted Touch Therapeutic Massage**. Etete Agbabune Torres, LMT.
+Website for **Gifted Touch Therapeutic Massage**. Etete Agbabune, LMT.
 Huntsville, Alabama. Board Certified NCTMB 403638-00 · Alabama LMT 1745. Est. 2006.
 
 Live at **[giftedtouch.org](https://giftedtouch.org)**
