@@ -906,7 +906,7 @@ details.spec .sp b:first-child{margin-top:0}
 
 /* how to order */
 #order{background:var(--noir2)}
-.order-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1080px;margin:0 auto}
+.order-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;max-width:1080px;margin:0 auto}
 .oc{border:1px solid var(--line-soft);border-radius:4px;padding:34px 30px;
   background:linear-gradient(180deg,var(--card-a),var(--card-b));display:flex;flex-direction:column}
 .oc i{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
@@ -919,10 +919,11 @@ details.spec .sp b:first-child{margin-top:0}
 
 @media(max-width:1000px){
   .shop-grid{grid-template-columns:repeat(2,1fr)}
-      .order-grid{grid-template-columns:1fr}
+      .order-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
   .shop-grid{grid-template-columns:1fr}
+  .order-grid{grid-template-columns:1fr}
       #shop{padding-top:70px}
 }
 
@@ -931,6 +932,63 @@ details.spec .sp b:first-child{margin-top:0}
 .gift-row-head .cat{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--lav);font-weight:500}
 .gift-row-head h3{font-family:var(--serif);font-weight:400;font-size:30px;color:var(--ivory);margin-top:9px}
 .gift-row-head .desc{font-size:14px;line-height:1.65;color:var(--ink);margin-top:10px}
+
+/* ---------- ordering ---------- */
+.qty{display:flex;align-items:center;gap:8px;margin-top:16px}
+.qty button{font-family:var(--sans);cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--gold);
+  border-radius:100px;transition:.3s}
+.qty .qminus,.qty .qplus{width:32px;height:32px;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center}
+.qty .qminus:hover,.qty .qplus:hover{background:var(--tint)}
+.qty .qn{min-width:22px;text-align:center;font-family:var(--quote);font-size:18px;color:var(--ivory)}
+.qty .qadd{margin-left:auto;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding:10px 16px}
+.qty .qadd:hover{background:var(--gold);color:var(--on-accent);border-color:var(--gold)}
+.qty[data-qty]:not([data-qty="0"]) .qadd{background:var(--gold);color:var(--on-accent);border-color:var(--gold)}
+.qty-na{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);padding:10px 0}
+
+#orderbar{position:fixed;left:0;right:0;bottom:0;z-index:95;background:var(--scrim-bar);backdrop-filter:blur(14px);
+  border-top:1px solid var(--line-soft);padding:12px 20px calc(12px + env(safe-area-inset-bottom))}
+#orderbar .ob-in{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.ob-sum{display:flex;align-items:baseline;gap:14px}
+.ob-sum b{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);font-weight:500}
+.ob-sum span{font-family:var(--quote);font-size:24px;color:var(--gold-hi)}
+#orderbar .btn{padding:13px 26px}
+body.has-order #bookbar{display:none!important}
+body.has-order{padding-bottom:84px}
+
+#orderdrawer{position:fixed;inset:0;z-index:150}
+.od-scrim{position:absolute;inset:0;background:var(--scrim-menu);backdrop-filter:blur(4px)}
+.od{position:absolute;top:0;right:0;bottom:0;width:min(520px,100%);background:var(--noir);overflow-y:auto;
+  padding:34px 34px 46px;box-shadow:-20px 0 60px rgba(0,0,0,.25);animation:odIn .5s cubic-bezier(.22,1,.36,1)}
+@keyframes odIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+.od-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.od-x{border:none;background:none;font-size:30px;line-height:1;color:var(--ink-dim);cursor:pointer;padding:0 4px}
+.od-x:hover{color:var(--gold)}
+.od-lines{list-style:none;border-top:1px solid var(--line-soft)}
+.od-lines li{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line-soft)}
+.od-lines .nm{font-family:var(--serif);font-size:17px;color:var(--ivory)}
+.od-lines .q{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
+.od-lines .p{font-family:var(--quote);font-size:17px;color:var(--gold-hi);font-variant-numeric:tabular-nums}
+.od-total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 4px}
+.od-total span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-dim);font-weight:500}
+.od-total b{font-family:var(--quote);font-size:30px;color:var(--gold-hi);font-weight:400}
+.od-step{display:flex;gap:14px;align-items:flex-start;margin-top:30px}
+.od-step i{flex:none;width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--quote);font-style:italic;font-size:14px;color:var(--gold)}
+.od-step b{display:block;font-family:var(--serif);font-size:19px;color:var(--ivory);font-weight:400}
+.od-step p{font-size:13px;color:var(--ink);margin-top:2px}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.pay{border:1px solid var(--line-soft);border-radius:6px;padding:18px 16px;text-align:center;background:var(--noir3)}
+.pay-brand{font-size:10px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.pay-brand{color:var(--gold)}
+.pay-qr{width:100%;max-width:150px;height:auto;display:block;margin:0 auto 12px;border-radius:4px}
+.pay-to{font-family:var(--serif);font-size:16px;color:var(--ivory)}
+.pay-id{font-family:var(--quote);font-size:17px;color:var(--gold-hi);margin-top:2px;letter-spacing:.02em}
+.pay-how{font-size:11.5px;line-height:1.5;color:var(--ink-dim);margin-top:8px}
+.pay-how.link{display:inline-block;color:var(--gold);border-bottom:1px solid var(--line);margin-top:10px}
+.od-send{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.od-send .btn{flex:1;justify-content:center;padding:15px 18px;font-size:11.5px}
+.od-fine{font-size:12px;line-height:1.6;color:var(--ink-dim);margin-top:16px;text-align:center}
+@media(max-width:640px){.pay-grid{grid-template-columns:1fr}.od{padding:26px 22px 40px}}
 </style>
 </head>
 <body>
@@ -982,8 +1040,8 @@ details.spec .sp b:first-child{margin-top:0}
       </p>
     </div>
     <div class="note-bar" data-reveal="3">
-      Ordering online is coming. For now, everything here is available
-      <b>after your session</b> at the studio, or by phone, text or email.
+      Add what you want below, pay the total by <b>Zelle or Cash App</b> straight to Etete,
+      and send her the order. Or pick up <b>after your session</b>, or call, text or email.
     </div>
   </div>
 </section>
@@ -991,7 +1049,7 @@ details.spec .sp b:first-child{margin-top:0}
 <section id="shop">
   <div class="wrap">
     <div class="shop-grid">
-      <article class="item" data-reveal>
+      <article class="item" data-name="Sugar Scrub" data-price="24.99" data-reveal>
         <div class="pic"><img src="img/shop-sugar-scrub.jpg" alt="Sugar Scrub, 8 oz / 226 g" loading="lazy"></div>
         <div class="info">
           <div class="cat">Renewal</div>
@@ -1000,9 +1058,10 @@ details.spec .sp b:first-child{margin-top:0}
           <p class="desc">A gentle body scrub crafted to exfoliate, soften and refresh the skin, leaving you feeling renewed and restored.</p>
           <details class="spec"><summary>Ingredients &amp; use<i></i></summary><div class="sp"><b>How to use</b>Apply a small amount to damp skin and gently massage in circular motions. Rinse thoroughly with warm water. For best results, use two to three times weekly.<b>Ingredients</b>Sugar, Coconut Oil, Shea Butter, Rosemary, Lavender, Essential Oils and other natural ingredients.<b>Caution</b>For external use only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children. Store in a cool, dry place.</div></details>
           <div class="meta"><span class="size">8 oz / 226 g</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>24.99</span></div>
+          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
         </div>
       </article>
-      <article class="item" data-reveal>
+      <article class="item" data-name="Body Butter" data-price="" data-reveal>
         <div class="pic"><img src="img/shop-body-butter.jpg" alt="Body Butter, 4 oz / 113 g" loading="lazy"></div>
         <div class="info">
           <div class="cat">Nourish</div>
@@ -1011,9 +1070,10 @@ details.spec .sp b:first-child{margin-top:0}
           <p class="desc">A rich, nourishing body butter created to moisturize, soften and restore the skin, leaving it feeling smooth, supple and cared for.</p>
           <details class="spec"><summary>Ingredients &amp; use<i></i></summary><div class="sp"><b>How to use</b>Massage a generous amount onto clean, dry skin. Focus on areas that need extra moisture. Use daily or whenever your skin needs a nourishing touch.<b>Ingredients</b>Shea Butter, Coconut Oil, Natural Oils, Essential Oils and other carefully selected ingredients.<b>Caution</b>For external use only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children. Store in a cool, dry place.</div></details>
           <div class="meta"><span class="size">4 oz / 113 g</span><span class="price tba">Ask in studio</span></div>
+          <div class="qty qty-na">Not available to order online yet</div>
         </div>
       </article>
-      <article class="item" data-reveal>
+      <article class="item" data-name="Relaxation Creme" data-price="34.99" data-reveal>
         <div class="pic dissolve"><img src="img/product-relaxation-creme.jpg" alt="Relaxation Creme, 4 oz" loading="lazy"></div>
         <div class="info">
           <div class="cat">Relaxation</div>
@@ -1022,9 +1082,10 @@ details.spec .sp b:first-child{margin-top:0}
           <p class="desc">A softly scented creme for winding down. Made in small batches by hand, the same blend Etete reaches for at the end of a session.</p>
           
           <div class="meta"><span class="size">4 oz</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>34.99</span></div>
+          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
         </div>
       </article>
-      <article class="item" data-reveal>
+      <article class="item" data-name="Pain Creme" data-price="34.99" data-reveal>
         <div class="pic dissolve"><img src="img/product-pain-creme.jpg" alt="Pain Creme, 4 oz" loading="lazy"></div>
         <div class="info">
           <div class="cat">Elisha's Oils &middot; Relief</div>
@@ -1033,9 +1094,10 @@ details.spec .sp b:first-child{margin-top:0}
           <p class="desc">Worked into tired joints and stiff muscles. Blended with witch hazel, peppermint, turmeric and rosemary.</p>
           
           <div class="meta"><span class="size">4 oz</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>34.99</span></div>
+          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
         </div>
       </article>
-      <article class="item" data-reveal>
+      <article class="item" data-name="Pain Spray" data-price="29.99" data-reveal>
         <div class="pic dissolve"><img src="img/product-pain-spray.jpg" alt="Pain Spray, 4 oz" loading="lazy"></div>
         <div class="info">
           <div class="cat">Elisha's Oils &middot; Relief</div>
@@ -1044,9 +1106,10 @@ details.spec .sp b:first-child{margin-top:0}
           <p class="desc">The same relief in a spray, for the places hands cannot easily reach. Light, fast and easy to carry.</p>
           
           <div class="meta"><span class="size">4 oz</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>29.99</span></div>
+          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
         </div>
       </article>
-      <article class="item" data-reveal>
+      <article class="item" data-name="Lavanilla Oil Roller" data-price="11.99" data-reveal>
         <div class="pic dissolve"><img src="img/product-oil-roller-2.jpg" alt="Lavanilla Oil Roller, 10 ml" loading="lazy"></div>
         <div class="info">
           <div class="cat">Calm</div>
@@ -1054,10 +1117,11 @@ details.spec .sp b:first-child{margin-top:0}
           <div class="scent">Lavender &amp; Vanilla</div>
           <p class="desc">A roller for wrists, temples and the back of the neck. Small enough for a handbag, calm enough for a long day.</p>
           
-          <div class="meta"><span class="size">10 ml</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>12</span></div>
+          <div class="meta"><span class="size">10 ml</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>11.99</span></div>
+          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
         </div>
       </article>
-      <article class="item" data-reveal>
+      <article class="item" data-name="Hair Growth Elixir" data-price="24.99" data-reveal>
         <div class="pic dissolve"><img src="img/product-hair-elixir.jpg" alt="Hair Growth Elixir, 16 oz" loading="lazy"></div>
         <div class="info">
           <div class="cat">Hair</div>
@@ -1065,7 +1129,8 @@ details.spec .sp b:first-child{margin-top:0}
           <div class="scent">Rosemary &amp; Peppermint</div>
           <p class="desc">A scalp and hair elixir blended by hand, built around rosemary and peppermint.</p>
           
-          <div class="meta"><span class="size">16 oz</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>25</span></div>
+          <div class="meta"><span class="size">16 oz</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>24.99</span></div>
+          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
         </div>
       </article>
             <div class="gift-row" data-reveal>
@@ -1113,27 +1178,80 @@ details.spec .sp b:first-child{margin-top:0}
   </div>
 </section>
 
+
+<!-- ===== order bar: appears once anything is added ===== -->
+<div id="orderbar" hidden>
+  <div class="ob-in">
+    <span class="ob-sum"><b id="ob-count">0 items</b><span id="ob-total">$0.00</span></span>
+    <button type="button" class="btn btn-gold" id="ob-open">Review &amp; pay</button>
+  </div>
+</div>
+
+<!-- ===== order drawer ===== -->
+<div id="orderdrawer" hidden>
+  <div class="od-scrim" id="od-close"></div>
+  <aside class="od" role="dialog" aria-label="Your order">
+    <div class="od-head">
+      <div class="eyebrow" style="margin:0"><span class="num">&nbsp;</span>Your order</div>
+      <button type="button" class="od-x" id="od-close2" aria-label="Close">&times;</button>
+    </div>
+    <ul class="od-lines" id="od-lines"></ul>
+    <div class="od-total"><span>Total</span><b id="od-total">$0.00</b></div>
+
+    <div class="od-step"><i>1</i><div><b>Pay the total to Etete</b><p>Both go straight to her.</p></div></div>
+    <div class="pay-grid">
+      <div class="pay">
+        <div class="pay-brand zelle">Zelle</div>
+        <img class="pay-qr" src="img/pay-zelle.png" alt="Zelle code for Etete Agbabune" onerror="this.style.display='none'">
+        <div class="pay-to">Etete Agbabune</div>
+        <div class="pay-id">256.326.0890</div>
+        <div class="pay-how">In your banking app, send to this number.</div>
+      </div>
+      <div class="pay">
+        <div class="pay-brand cashapp">Cash App</div>
+        <img class="pay-qr" src="img/pay-cashapp.png" alt="Cash App code for $Taydolars">
+        <div class="pay-to">GTTMassage</div>
+        <div class="pay-id">$Taydolars</div>
+        <a class="pay-how link" href="https://cash.app/$Taydolars" target="_blank" rel="noopener">Open in Cash App</a>
+      </div>
+    </div>
+
+    <div class="od-step"><i>2</i><div><b>Send her the order</b><p>So she knows what to set aside and who it is for.</p></div></div>
+    <div class="od-send">
+      <a class="btn btn-gold" id="od-sms" href="#">Text the order</a>
+      <a class="btn btn-ghost" id="od-mail" href="#">Email it instead</a>
+    </div>
+    <p class="od-fine">Pick up at the studio, 3303 Westmill Dr SW, Suite 8, or at your next session.</p>
+  </aside>
+</div>
+
 <section id="order">
   <div class="wrap">
     <div class="shop-head" style="margin-bottom:56px">
       <div class="eyebrow" data-reveal><span class="num">02</span>How to order</div>
-      <h2 data-reveal="2">Three ways<br><em>to get yours.</em></h2>
+      <h2 data-reveal="2">Four ways<br><em>to get yours.</em></h2>
     </div>
     <div class="order-grid">
       <div class="oc" data-reveal>
-        <i>i</i><h3>After your session</h3>
+        <i>i</i><h3>Order on this page</h3>
+        <p>Add what you want above, pay the total to Etete by Zelle or Cash App, then text
+        or email her the order. She sets it aside for you.</p>
+        <a class="go" href="#shop" id="oc-order">Start an order</a>
+      </div>
+      <div class="oc" data-reveal="2">
+        <i>ii</i><h3>After your session</h3>
         <p>Everything is on the shelf at the studio on Westmill Drive. Ask Etete what suits
         your skin and she will talk you through it.</p>
         <span class="go">3303 Westmill Dr SW, Suite 8</span>
       </div>
       <div class="oc" data-reveal="2">
-        <i>ii</i><h3>Call or text</h3>
+        <i>iii</i><h3>Call or text</h3>
         <p>Tell her what you want and she will set it aside. She answers her own phone,
         so you can ask about scents and sizes before you commit.</p>
         <a class="go" href="tel:+12563260890">256.326.0890</a>
       </div>
       <div class="oc" data-reveal="3">
-        <i>iii</i><h3>Email</h3>
+        <i>iv</i><h3>Email</h3>
         <p>Best for larger orders, gift bundles, or anything you would like put together
         for an event or a group.</p>
         <a class="go" href="mailto:gifted70touch@gmail.com?subject=Body%20care%20order">gifted70touch@gmail.com</a>
@@ -1287,6 +1405,65 @@ details.spec .sp b:first-child{margin-top:0}
     });
   }
 
+})();
+</script>
+
+<script>
+(function(){
+  var KEY='gt_order', PHONE='+12563260890', MAIL='gifted70touch@gmail.com';
+  var cart={}; try{ cart=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ cart={}; }
+  var items={};
+  document.querySelectorAll('.item[data-price]').forEach(function(a){
+    var n=a.getAttribute('data-name'), p=parseFloat(a.getAttribute('data-price'));
+    if(!n||isNaN(p)) return;
+    items[n]={price:p, el:a, qty:a.querySelector('.qty')};
+  });
+  function money(v){ return '$'+v.toFixed(2); }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(cart)); }catch(e){} }
+  function lines(){ return Object.keys(cart).filter(function(k){return cart[k]>0 && items[k];}); }
+  function total(){ return lines().reduce(function(t,k){ return t + cart[k]*items[k].price; },0); }
+  function count(){ return lines().reduce(function(t,k){ return t + cart[k]; },0); }
+  function orderText(){
+    var L=lines().map(function(k){ return cart[k]+' x '+k+' ('+money(cart[k]*items[k].price)+')'; });
+    return 'Hi Etete, I would like to order:\n'+L.join('\n')+'\nTotal '+money(total())+'\nI have paid by Zelle / Cash App. My name is ';
+  }
+  function render(){
+    Object.keys(items).forEach(function(k){
+      var q=cart[k]||0, box=items[k].qty; if(!box) return;
+      box.setAttribute('data-qty', q); box.querySelector('.qn').textContent=q;
+      box.querySelector('.qadd').textContent = q>0 ? 'In your order' : 'Add to order';
+    });
+    var n=count(), bar=document.getElementById('orderbar');
+    bar.hidden = n===0; document.body.classList.toggle('has-order', n>0);
+    document.getElementById('ob-count').textContent = n+(n===1?' item':' items');
+    document.getElementById('ob-total').textContent = money(total());
+    var ul=document.getElementById('od-lines'); ul.innerHTML='';
+    lines().forEach(function(k){
+      var li=document.createElement('li');
+      li.innerHTML='<span class="nm">'+k+'</span><span class="q">x '+cart[k]+'</span><span class="p">'+money(cart[k]*items[k].price)+'</span>';
+      ul.appendChild(li);
+    });
+    document.getElementById('od-total').textContent=money(total());
+    var body=encodeURIComponent(orderText());
+    document.getElementById('od-sms').href='sms:'+PHONE+'?&body='+body;
+    document.getElementById('od-mail').href='mailto:'+MAIL+'?subject='+encodeURIComponent('Body care order')+'&body='+body;
+    save();
+  }
+  Object.keys(items).forEach(function(k){
+    var box=items[k].qty; if(!box) return;
+    box.querySelector('.qplus').addEventListener('click',function(){ cart[k]=(cart[k]||0)+1; render(); });
+    box.querySelector('.qminus').addEventListener('click',function(){ cart[k]=Math.max(0,(cart[k]||0)-1); render(); });
+    box.querySelector('.qadd').addEventListener('click',function(){ if(!(cart[k]>0)) cart[k]=1; render(); openDrawer(); });
+  });
+  var drawer=document.getElementById('orderdrawer');
+  function openDrawer(){ drawer.hidden=false; document.body.style.overflow='hidden'; }
+  function closeDrawer(){ drawer.hidden=true; document.body.style.overflow=''; }
+  document.getElementById('ob-open').addEventListener('click',openDrawer);
+  var oc=document.getElementById('oc-order'); if(oc) oc.addEventListener('click',function(e){ if(count()>0){ e.preventDefault(); openDrawer(); } });
+  document.getElementById('od-close').addEventListener('click',closeDrawer);
+  document.getElementById('od-close2').addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrawer(); });
+  render();
 })();
 </script>
 </body>
