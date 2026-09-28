@@ -879,6 +879,8 @@ footer{
 .ev-meta dt{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-dim);font-weight:500}
 .ev-meta dd{font-family:var(--serif);font-size:20px;color:var(--ivory);margin-top:4px}
 .ev-info p{font-size:14.5px;line-height:1.75;color:var(--ink)}
+.ev-meta dd small{display:block;font-family:var(--sans);font-size:12.5px;letter-spacing:.02em;color:var(--ink-dim);margin-top:3px}
+.ev-info p.ev-fine{font-size:12.5px;line-height:1.65;color:var(--ink-dim);margin-top:14px}
 .ev-points{list-style:none;margin:18px 0 0}
 .ev-points li{position:relative;padding-left:22px;font-size:14px;line-height:1.7;color:var(--ink);margin-bottom:9px}
 .ev-points li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:1px;background:var(--gold)}
@@ -1221,7 +1223,7 @@ body.has-order{padding-bottom:84px}
         </div>
       </article>
       <article class="item" data-name="Lavanilla Oil Roller" data-price="11.99" data-reveal>
-        <div class="pic dissolve"><img src="img/product-oil-roller-2.jpg" alt="Lavanilla Oil Roller, 10 ml" loading="lazy"></div>
+        <div class="pic"><img src="img/shop-lavanilla-oil-roller.webp" width="1125" height="1125" alt="Lavanilla Oil Roller in its new Gifted Touch label, styled on marble with pink flowers" loading="lazy"></div>
         <div class="info">
           <div class="cat">Calm</div>
           <h3>Lavanilla Oil Roller</h3>
@@ -1233,15 +1235,27 @@ body.has-order{padding-bottom:84px}
         </div>
       </article>
       <article class="item" data-name="Hair Growth Elixir" data-price="24.99" data-reveal>
-        <div class="pic dissolve"><img src="img/product-hair-elixir.jpg" alt="Hair Growth Elixir, 16 oz" loading="lazy"></div>
+        <div class="pic"><img src="img/shop-hair-growth-elixir.webp" width="1125" height="1125" alt="Hair Growth Elixir in its new Gifted Touch label, styled on marble with pink flowers" loading="lazy"></div>
         <div class="info">
           <div class="cat">Hair</div>
           <h3>Hair Growth Elixir</h3>
           <div class="scent">Rosemary &amp; Peppermint</div>
-          <p class="desc">A scalp and hair elixir blended by hand, built around rosemary and peppermint.</p>
+          <p class="desc">A scalp and hair elixir blended by hand, built around rosemary and peppermint, for scalp nourishment, hair strength and moisture.</p>
           
           <div class="meta"><span class="size">16 oz</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>24.99</span></div>
           <div class="qty" data-qty="0" role="group" aria-label="Hair Growth Elixir quantity"><button type="button" class="qminus" aria-label="Remove one Hair Growth Elixir">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one Hair Growth Elixir">+</button><button type="button" class="qadd" aria-label="Add to order: Hair Growth Elixir">Add to order</button></div>
+        </div>
+      </article>
+
+      <article class="item" data-name="Hair Spray" data-price="" data-reveal>
+        <div class="pic"><img src="img/shop-hair-spray.webp" width="1125" height="1125" alt="Gifted Touch Hair Spray in its new label, styled on marble with pink flowers" loading="lazy"></div>
+        <div class="info">
+          <div class="cat">New &middot; Hair</div>
+          <h3>Hair Spray</h3>
+          <div class="scent">Moisture &middot; Nourishment &middot; Refresh</div>
+          <p class="desc">The newest piece of the Gifted Touch hair line, made to bring moisture, nourishment and a refresh to your hair.</p>
+          <div class="meta"><span class="size">Just added</span><span class="price tba">Ask in studio</span></div>
+          <div class="qty qty-na">Not available to order online yet</div>
         </div>
       </article>
             <div class="gift-row" data-reveal>
@@ -1481,6 +1495,13 @@ body.has-order{padding-bottom:84px}
     var i = f.indexOf(document.activeElement);
     if(e.shiftKey && i <= 0){ e.preventDefault(); f[f.length-1].focus(); }
     else if(!e.shiftKey && (i === f.length-1 || i === -1)){ e.preventDefault(); f[0].focus(); }
+  });
+
+  /* dated events remove themselves once they have ended */
+  var nowMs = Date.now();
+  document.querySelectorAll('[data-until]').forEach(function(el){
+    var end = Date.parse(el.getAttribute('data-until'));
+    if(!isNaN(end) && nowMs >= end && el.parentNode) el.parentNode.removeChild(el);
   });
 
   /* reveals */

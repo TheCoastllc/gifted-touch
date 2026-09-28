@@ -879,6 +879,8 @@ footer{
 .ev-meta dt{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-dim);font-weight:500}
 .ev-meta dd{font-family:var(--serif);font-size:20px;color:var(--ivory);margin-top:4px}
 .ev-info p{font-size:14.5px;line-height:1.75;color:var(--ink)}
+.ev-meta dd small{display:block;font-family:var(--sans);font-size:12.5px;letter-spacing:.02em;color:var(--ink-dim);margin-top:3px}
+.ev-info p.ev-fine{font-size:12.5px;line-height:1.65;color:var(--ink-dim);margin-top:14px}
 .ev-points{list-style:none;margin:18px 0 0}
 .ev-points li{position:relative;padding-left:22px;font-size:14px;line-height:1.7;color:var(--ink);margin-bottom:9px}
 .ev-points li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:1px;background:var(--gold)}
@@ -1200,6 +1202,13 @@ body.has-order{padding-bottom:84px}
       <p>Chair and corporate massage is arranged directly with Etete. Travel beyond twenty miles
       from the studio may carry an additional fee, quoted before anything is booked.</p>
 
+      <h3>Insurance</h3>
+      <p>Insurance clients are welcome. Eligible Oakwood University employees may qualify for
+      covered massage sessions through their WebTPA insurance plan, and Etete can assist with the
+      massage service and the applicable insurance billing process. Coverage and benefits vary by
+      individual plan, so please confirm your eligibility and available benefits with WebTPA, your
+      insurer or your plan administrator.</p>
+
       <h3>Paying for body care products</h3>
       <p>Orders placed on the <a href="/shop">shop page</a> are paid directly to Etete using
       <b>Zelle</b> or <b>Cash App</b>. This website has no checkout and no payment processor.
@@ -1286,7 +1295,9 @@ body.has-order{padding-bottom:84px}
       <h3>Health information</h3>
       <p>What you tell Etete about your body and your health, whether on an intake form or in the
       treatment room, is kept confidential. It is not shared with anyone without your written
-      permission, except where the law requires disclosure.</p>
+      permission, except where the law requires disclosure. If you ask Etete to bill your insurance,
+      the information that claim requires is shared with your insurer or plan administrator for that
+      purpose.</p>
 
       <h3>Children</h3>
       <p>This site is not directed at children under 13 and collects no information from anyone,
@@ -1540,6 +1551,13 @@ body.has-order{padding-bottom:84px}
     var i = f.indexOf(document.activeElement);
     if(e.shiftKey && i <= 0){ e.preventDefault(); f[f.length-1].focus(); }
     else if(!e.shiftKey && (i === f.length-1 || i === -1)){ e.preventDefault(); f[0].focus(); }
+  });
+
+  /* dated events remove themselves once they have ended */
+  var nowMs = Date.now();
+  document.querySelectorAll('[data-until]').forEach(function(el){
+    var end = Date.parse(el.getAttribute('data-until'));
+    if(!isNaN(end) && nowMs >= end && el.parentNode) el.parentNode.removeChild(el);
   });
 
   /* reveals */
