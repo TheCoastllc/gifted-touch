@@ -852,6 +852,63 @@ footer{
   h1 .ln span{transform:none}
   .hero-sub,.hero-ctas,.hero-cred{opacity:1;transform:none}
 }
+/* ---------- nav fit: nothing wraps; the menu button takes over before anything would ---------- */
+.brand span,.brand small,.navlinks a{white-space:nowrap}
+.navlinks{gap:clamp(14px,1.25vw,18px)}
+.navlinks a{letter-spacing:.12em}
+@media(max-width:1200px){.navlinks{display:none}#burger{display:block}}
+
+/* ---------- events ---------- */
+#events{background:var(--noir2)}
+.ev-head{max-width:660px;margin:0 auto 70px;text-align:center}
+.ev-head .eyebrow{justify-content:center}
+.ev-head .lede{margin:0 auto}
+.ev-list{display:flex;flex-direction:column;gap:84px;max-width:1060px;margin:0 auto}
+.ev{display:grid;grid-template-columns:minmax(0,430px) minmax(0,1fr);gap:60px;align-items:center}
+.ev:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,430px)}
+.ev:nth-child(even) .ev-flyer{order:2}
+.ev-flyer{display:block;border-radius:6px;overflow:hidden;
+  box-shadow:0 26px 60px var(--shadow-frame),0 2px 8px var(--shadow-frame);transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.ev-flyer:hover{transform:translateY(-6px)}
+.ev-flyer img{width:100%;height:auto;display:block}
+.ev-tag{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--lav);font-weight:500}
+.ev h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.2vw,44px);line-height:1.08;color:var(--ivory);margin:12px 0 22px}
+.ev h3 em{font-style:normal;color:var(--gold-hi)}
+.ev-meta{display:flex;flex-wrap:wrap;gap:14px 44px;padding:16px 0;margin-bottom:22px;
+  border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.ev-meta dt{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-dim);font-weight:500}
+.ev-meta dd{font-family:var(--serif);font-size:20px;color:var(--ivory);margin-top:4px}
+.ev-info p{font-size:14.5px;line-height:1.75;color:var(--ink)}
+.ev-points{list-style:none;margin:18px 0 0}
+.ev-points li{position:relative;padding-left:22px;font-size:14px;line-height:1.7;color:var(--ink);margin-bottom:9px}
+.ev-points li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:1px;background:var(--gold)}
+.ev-points b{color:var(--ivory);font-weight:500}
+.ev-close{font-family:var(--quote);font-style:italic;font-size:19px!important;color:var(--gold)!important;margin-top:14px}
+.ev-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:28px}
+.ev-more{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--gold);
+  border-bottom:1px solid var(--line);padding:6px 0;min-height:24px;display:inline-flex;align-items:center}
+.ev-more:hover{color:var(--gold-hi);border-color:var(--gold)}
+@media(max-width:900px){
+  .ev,.ev:nth-child(even){grid-template-columns:1fr;gap:34px}
+  .ev:nth-child(even) .ev-flyer{order:0}
+  .ev-flyer{max-width:420px;width:100%;margin:0 auto}
+  .ev-list{gap:72px}
+}
+
+/* ---------- her business card ---------- */
+.bcard{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:60px;align-items:center;
+  margin-top:90px;padding-top:66px;border-top:1px solid var(--line-soft)}
+.bcard-faces{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bcard-faces img{width:100%;height:auto;display:block;border-radius:8px;
+  box-shadow:0 16px 38px var(--shadow-frame),0 1px 3px var(--shadow-frame)}
+.bcard-faces img:last-child{transform:translateY(22px)}
+.bcard-info .lbl{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);font-weight:500}
+.bcard-info h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.6vw,34px);color:var(--ivory);margin:10px 0 12px}
+.bcard-info p{font-size:14.5px;line-height:1.7;color:var(--ink);max-width:430px}
+.bcard-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+@media(max-width:1000px){.bcard{grid-template-columns:1fr;gap:44px}}
+@media(max-width:560px){.bcard-faces{grid-template-columns:1fr;max-width:380px}.bcard-faces img:last-child{transform:none}}
+
 /* ---------- accessibility ---------- */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -1025,6 +1082,12 @@ body.has-order{padding-bottom:84px}
 .pay-id{font-family:var(--quote);font-size:17px;color:var(--gold-hi);margin-top:2px;letter-spacing:.02em}
 .pay-how{font-size:11.5px;line-height:1.5;color:var(--ink-dim);margin-top:8px}
 .pay-how.link{display:inline-block;color:var(--gold);border-bottom:1px solid var(--line);margin-top:10px}
+.pay-amt{margin:14px 0 2px;padding-top:12px;border-top:1px solid var(--line-soft)}
+.pay-amt .lbl{display:block;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-dim);font-weight:500}
+.pay-amt b{display:block;font-family:var(--quote);font-size:27px;font-weight:400;line-height:1.15;color:var(--gold-hi);
+  font-variant-numeric:tabular-nums;margin-top:2px}
+.pay-amt .fee{display:block;font-size:11px;line-height:1.45;color:var(--ink-dim);margin-top:3px}
+.pay-note{font-size:12px;line-height:1.65;color:var(--ink-dim);margin-top:14px}
 .od-send{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
 .od-send .btn{flex:1;justify-content:center;padding:15px 18px;font-size:11.5px}
 .od-fine{font-size:12px;line-height:1.6;color:var(--ink-dim);margin-top:16px;text-align:center}
@@ -1049,6 +1112,7 @@ body.has-order{padding-bottom:84px}
       <a href="/#story">The Story</a>
       <a href="/#services">Services</a>
       <a href="/#mobile">Corporate</a>
+      <a href="/#events">Events</a>
       <a href="/shop" class="current">Shop</a>
       <a href="/#gallery">Gallery</a>
       <a href="/#faq">FAQ</a>
@@ -1063,6 +1127,7 @@ body.has-order{padding-bottom:84px}
   <a href="/#story">The Story</a>
   <a href="/#services">Services</a>
   <a href="/#mobile">Corporate</a>
+  <a href="/#events">Events</a>
   <a href="/shop" class="current">Shop</a>
   <a href="/#gallery">Gallery</a>
   <a href="/#faq">FAQ</a>
@@ -1243,7 +1308,7 @@ body.has-order{padding-bottom:84px}
       <button type="button" class="od-x" id="od-close2" aria-label="Close">&times;</button>
     </div>
     <ul class="od-lines" id="od-lines"></ul>
-    <div class="od-total"><span>Total</span><b id="od-total">$0.00</b></div>
+    <div class="od-total"><span>Order total</span><b id="od-total">$0.00</b></div>
 
     <div class="od-step"><i>1</i><div><b>Pay the total to Etete</b><p>Both go straight to her.</p></div></div>
     <div class="pay-grid">
@@ -1252,6 +1317,7 @@ body.has-order{padding-bottom:84px}
         <img class="pay-qr" src="img/pay-zelle.png" alt="Zelle code for Etete Agbabune" onerror="this.style.display='none'">
         <div class="pay-to">Etete Agbabune</div>
         <div class="pay-id">256.326.0890</div>
+        <div class="pay-amt"><span class="lbl">Send</span><b id="pay-zelle-amt">$0.00</b><span class="fee">No fee</span></div>
         <div class="pay-how">In your banking app, send to this number.</div>
       </div>
       <div class="pay">
@@ -1259,9 +1325,14 @@ body.has-order{padding-bottom:84px}
         <img class="pay-qr" src="img/pay-cashapp.png" alt="Cash App code for $Taydolars">
         <div class="pay-to">GTTMassage</div>
         <div class="pay-id">$Taydolars</div>
-        <a class="pay-how link" href="https://cash.app/$Taydolars" target="_blank" rel="noopener">Open in Cash App</a>
+        <div class="pay-amt"><span class="lbl">Send</span><b id="pay-cash-amt">$0.00</b><span class="fee" id="pay-cash-fee">Includes the Cash App fee</span></div>
+        <a class="pay-how link" id="pay-cash-link" href="https://cash.app/$Taydolars" target="_blank" rel="noopener">Open in Cash App<span class="sr-only"> (opens in a new tab)</span></a>
       </div>
     </div>
+
+    <p class="pay-note">Cash App deducts a processing fee of 2.6% plus 15 cents from every payment a
+    business account receives, so that fee is added to the Cash App amount and your order reaches
+    Etete in full. Zelle has no fee.</p>
 
     <div class="od-step"><i>2</i><div><b>Send her the order</b><p>So she knows what to set aside and who it is for.</p></div></div>
     <div class="od-send">
@@ -1321,6 +1392,7 @@ body.has-order{padding-bottom:84px}
         <a href="/#story">The Story</a>
         <a href="/#services">Services &amp; Rates</a>
         <a href="/#mobile">Corporate &amp; Chair</a>
+        <a href="/#events">Events</a>
         <a href="/#bodycare">Body Care</a>
         <a href="/#gallery">Gallery</a>
         <a href="/#faq">FAQ</a>
@@ -1518,13 +1590,27 @@ body.has-order{padding-bottom:84px}
     items[n]={price:p, el:a, qty:a.querySelector('.qty')};
   });
   function money(v){ return '$'+v.toFixed(2); }
+  /* Cash App Business deducts 2.6% + $0.15 from each payment it receives (cash.app/help 6521,
+     checked September 2026). The Cash App amount is grossed up so Etete nets the full order.
+     If her account is ever switched to a personal account, set CASH_PCT and CASH_FIXED to 0. */
+  var CASH_PCT=0.026, CASH_FIXED=15;   /* fixed part in cents */
+  function cashFee(c){ return Math.ceil(Math.round(c*CASH_PCT*1e6)/1e6 + CASH_FIXED); }
+  function cashGross(tc){
+    if(tc<=0 || (!CASH_PCT && !CASH_FIXED)) return tc;
+    var c=Math.ceil((tc+CASH_FIXED)/(1-CASH_PCT));
+    while(c-cashFee(c) < tc) c++;
+    return c;
+  }
   function save(){ try{ localStorage.setItem(KEY, JSON.stringify(cart)); }catch(e){} }
   function lines(){ return Object.keys(cart).filter(function(k){return cart[k]>0 && items[k];}); }
   function total(){ return lines().reduce(function(t,k){ return t + cart[k]*items[k].price; },0); }
   function count(){ return lines().reduce(function(t,k){ return t + cart[k]; },0); }
   function orderText(){
     var L=lines().map(function(k){ return cart[k]+' x '+k+' ('+money(cart[k]*items[k].price)+')'; });
-    return 'Hi Etete, I would like to order:\n'+L.join('\n')+'\nTotal '+money(total())+'\nI have paid by Zelle / Cash App. My name is ';
+    var tc=Math.round(total()*100), cc=cashGross(tc);
+    return 'Hi Etete, I would like to order:\n'+L.join('\n')+'\nOrder total '+money(tc/100)
+      +'\nBy Zelle: '+money(tc/100)+'. By Cash App: '+money(cc/100)+' including the Cash App fee.'
+      +'\nI paid by: \nMy name is ';
   }
   var announce=false;
   function render(){
@@ -1546,6 +1632,11 @@ body.has-order{padding-bottom:84px}
       ul.appendChild(li);
     });
     document.getElementById('od-total').textContent=money(total());
+    var tc=Math.round(total()*100), cc=cashGross(tc);
+    document.getElementById('pay-zelle-amt').textContent=money(tc/100);
+    document.getElementById('pay-cash-amt').textContent=money(cc/100);
+    document.getElementById('pay-cash-fee').textContent='Includes '+money((cc-tc)/100)+' Cash App fee';
+    document.getElementById('pay-cash-link').href='https://cash.app/$Taydolars/'+(cc/100).toFixed(2);
     if(announce){
       document.getElementById('ob-status').textContent =
         n===0 ? 'Your order is empty.' : n+(n===1?' item':' items')+' in your order. Total '+money(total())+'.';

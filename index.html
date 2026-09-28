@@ -889,6 +889,63 @@ footer{
   h1 .ln span{transform:none}
   .hero-sub,.hero-ctas,.hero-cred{opacity:1;transform:none}
 }
+/* ---------- nav fit: nothing wraps; the menu button takes over before anything would ---------- */
+.brand span,.brand small,.navlinks a{white-space:nowrap}
+.navlinks{gap:clamp(14px,1.25vw,18px)}
+.navlinks a{letter-spacing:.12em}
+@media(max-width:1200px){.navlinks{display:none}#burger{display:block}}
+
+/* ---------- events ---------- */
+#events{background:var(--noir2)}
+.ev-head{max-width:660px;margin:0 auto 70px;text-align:center}
+.ev-head .eyebrow{justify-content:center}
+.ev-head .lede{margin:0 auto}
+.ev-list{display:flex;flex-direction:column;gap:84px;max-width:1060px;margin:0 auto}
+.ev{display:grid;grid-template-columns:minmax(0,430px) minmax(0,1fr);gap:60px;align-items:center}
+.ev:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,430px)}
+.ev:nth-child(even) .ev-flyer{order:2}
+.ev-flyer{display:block;border-radius:6px;overflow:hidden;
+  box-shadow:0 26px 60px var(--shadow-frame),0 2px 8px var(--shadow-frame);transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.ev-flyer:hover{transform:translateY(-6px)}
+.ev-flyer img{width:100%;height:auto;display:block}
+.ev-tag{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--lav);font-weight:500}
+.ev h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.2vw,44px);line-height:1.08;color:var(--ivory);margin:12px 0 22px}
+.ev h3 em{font-style:normal;color:var(--gold-hi)}
+.ev-meta{display:flex;flex-wrap:wrap;gap:14px 44px;padding:16px 0;margin-bottom:22px;
+  border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.ev-meta dt{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-dim);font-weight:500}
+.ev-meta dd{font-family:var(--serif);font-size:20px;color:var(--ivory);margin-top:4px}
+.ev-info p{font-size:14.5px;line-height:1.75;color:var(--ink)}
+.ev-points{list-style:none;margin:18px 0 0}
+.ev-points li{position:relative;padding-left:22px;font-size:14px;line-height:1.7;color:var(--ink);margin-bottom:9px}
+.ev-points li::before{content:"";position:absolute;left:0;top:11px;width:9px;height:1px;background:var(--gold)}
+.ev-points b{color:var(--ivory);font-weight:500}
+.ev-close{font-family:var(--quote);font-style:italic;font-size:19px!important;color:var(--gold)!important;margin-top:14px}
+.ev-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:28px}
+.ev-more{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--gold);
+  border-bottom:1px solid var(--line);padding:6px 0;min-height:24px;display:inline-flex;align-items:center}
+.ev-more:hover{color:var(--gold-hi);border-color:var(--gold)}
+@media(max-width:900px){
+  .ev,.ev:nth-child(even){grid-template-columns:1fr;gap:34px}
+  .ev:nth-child(even) .ev-flyer{order:0}
+  .ev-flyer{max-width:420px;width:100%;margin:0 auto}
+  .ev-list{gap:72px}
+}
+
+/* ---------- her business card ---------- */
+.bcard{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:60px;align-items:center;
+  margin-top:90px;padding-top:66px;border-top:1px solid var(--line-soft)}
+.bcard-faces{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bcard-faces img{width:100%;height:auto;display:block;border-radius:8px;
+  box-shadow:0 16px 38px var(--shadow-frame),0 1px 3px var(--shadow-frame)}
+.bcard-faces img:last-child{transform:translateY(22px)}
+.bcard-info .lbl{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);font-weight:500}
+.bcard-info h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.6vw,34px);color:var(--ivory);margin:10px 0 12px}
+.bcard-info p{font-size:14.5px;line-height:1.7;color:var(--ink);max-width:430px}
+.bcard-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+@media(max-width:1000px){.bcard{grid-template-columns:1fr;gap:44px}}
+@media(max-width:560px){.bcard-faces{grid-template-columns:1fr;max-width:380px}.bcard-faces img:last-child{transform:none}}
+
 /* ---------- accessibility ---------- */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -940,6 +997,7 @@ body.motion-paused .mq-track{animation-play-state:paused}
       <a href="#story">The Story</a>
       <a href="#services">Services</a>
       <a href="#mobile">Corporate</a>
+      <a href="#events">Events</a>
       <a href="#bodycare">Body Care</a>
       <a href="/shop">Shop</a>
       <a href="#gallery">Gallery</a>
@@ -955,6 +1013,7 @@ body.motion-paused .mq-track{animation-play-state:paused}
   <a href="#story">The Story</a>
   <a href="#services">Services</a>
   <a href="#mobile">Corporate</a>
+  <a href="#events">Events</a>
   <a href="#bodycare">Body Care</a>
   <a href="/shop">Shop</a>
   <a href="#gallery">Gallery</a>
@@ -1208,11 +1267,81 @@ body.motion-paused .mq-track{animation-play-state:paused}
   </div>
 </section>
 
+<!-- events -->
+<section id="events" aria-labelledby="events-h">
+  <div class="wrap">
+    <div class="ev-head">
+      <div class="eyebrow" data-reveal><span class="num">05</span>Events</div>
+      <h2 id="events-h" data-reveal="2">Where to find her<br><em>outside the studio.</em></h2>
+      <p class="lede" data-reveal="3">Pampering gatherings, chair massage and the body care line,
+      brought to the places people already come together.</p>
+    </div>
+    <div class="ev-list">
+
+      <article class="ev" data-reveal aria-labelledby="ev1-h">
+        <a class="ev-flyer" href="img/event-thanksgiving-pampering.webp" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="img/event-thanksgiving-pampering.webp" width="1080" height="1350" loading="lazy" alt="">
+        </a>
+        <div class="ev-info">
+          <div class="ev-tag">Private ladies' relaxation event</div>
+          <h3 id="ev1-h">Give thanks.<br><em>Get pampered.</em></h3>
+          <dl class="ev-meta">
+            <div><dt>When</dt><dd>After Thanksgiving</dd></div>
+            <div><dt>Where</dt><dd>Jacquelyn Shipe's home</dd></div>
+          </dl>
+          <p>After the Thanksgiving celebrations, take a moment to slow down, relax, and enjoy
+          some well deserved self care. An intimate relaxation and pampering experience with the
+          ladies at Jacquelyn Shipe's home.</p>
+          <ul class="ev-points">
+            <li><b>Relaxation massage.</b> Soothing therapeutic touch designed to help your body
+            relax and your mind reset.</li>
+            <li><b>Pampering.</b> A peaceful self care experience, surrounded by good company and
+            good energy.</li>
+            <li><b>Wellness products.</b> The Gifted Touch collection, created to complement your
+            personal wellness routine.</li>
+          </ul>
+          <div class="ev-cta">
+            <a class="btn btn-gold" href="tel:+12563260890">Call to ask about joining</a>
+            <a class="ev-more" href="img/event-thanksgiving-pampering.webp" target="_blank" rel="noopener">View the flyer<span class="sr-only"> for Give Thanks, Get Pampered (opens in a new tab)</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ev" data-reveal aria-labelledby="ev2-h">
+        <a class="ev-flyer" href="img/event-chair-massage.webp" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="img/event-chair-massage.webp" width="1080" height="1350" loading="lazy" alt="">
+        </a>
+        <div class="ev-info">
+          <div class="ev-tag">Chair massage &amp; wellness products</div>
+          <h3 id="ev2-h">Restore. Relax.<br><em>Reconnect.</em></h3>
+          <dl class="ev-meta">
+            <div><dt>Format</dt><dd>Seated chair massage</dd></div>
+            <div><dt>Where</dt><dd>Workplaces &amp; community events</dd></div>
+          </dl>
+          <p>Experience the healing power of intentional touch. A relaxing chair massage designed
+          to help release everyday tension, ease muscle discomfort, and leave you feeling
+          refreshed.</p>
+          <ul class="ev-points">
+            <li><b>Also featuring.</b> Gifted Touch wellness products: Pain Creme, Body Butter,
+            Sugar Scrub, and self care and wellness essentials.</li>
+          </ul>
+          <p class="ev-close">Stop by. Get pampered. Discover your new self care ritual.</p>
+          <div class="ev-cta">
+            <a class="btn btn-gold" href="mailto:gifted70touch@gmail.com?subject=Chair%20massage%20at%20our%20event">Bring it to your event</a>
+            <a class="ev-more" href="img/event-chair-massage.webp" target="_blank" rel="noopener">View the flyer<span class="sr-only"> for Restore, Relax, Reconnect (opens in a new tab)</span></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- body care -->
 <section id="bodycare" class="deep">
   <div class="wrap">
     <div class="prod-head">
-      <div class="eyebrow" data-reveal><span class="num">05</span>The Body Care Line</div>
+      <div class="eyebrow" data-reveal><span class="num">06</span>The Body Care Line</div>
       <h2 data-reveal="2">Small batch.<br><em>Handcrafted with prayer.</em></h2>
       <p class="lede" data-reveal="3" style="margin:0 auto">
         The care does not end when the session does. Etete blends her own body care line
@@ -1282,7 +1411,7 @@ body.motion-paused .mq-track{animation-play-state:paused}
 <section id="gift">
   <div class="wrap">
     <div class="gift-head">
-      <div class="eyebrow" data-reveal><span class="num">06</span>Gift Cards</div>
+      <div class="eyebrow" data-reveal><span class="num">07</span>Gift Cards</div>
       <h2 data-reveal="2">Give an hour<br><em>of being cared for.</em></h2>
       <p class="lede" data-reveal="3">
         The easiest gift to get right. It works on any service, the person you give
@@ -1336,7 +1465,7 @@ body.motion-paused .mq-track{animation-play-state:paused}
 <section id="gallery">
   <div class="wrap">
     <div class="prod-head">
-      <div class="eyebrow" data-reveal><span class="num">07</span>The Practice</div>
+      <div class="eyebrow" data-reveal><span class="num">08</span>The Practice</div>
       <h2 data-reveal="2">Twenty years,<br><em>in the room.</em></h2>
       <p class="lede" data-reveal="3" style="margin:0 auto">
         Health fairs, church events, corporate floors, and the quiet of her own
@@ -1375,7 +1504,7 @@ body.motion-paused .mq-track{animation-play-state:paused}
 <!-- testimonials -->
 <section id="words" class="deep">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center" data-reveal><span class="num">08</span>Kind Words</div>
+    <div class="eyebrow" style="justify-content:center" data-reveal><span class="num">09</span>Kind Words</div>
     <span class="bigquote-mark" aria-hidden="true" data-reveal>&ldquo;</span>
     <div class="stage" id="tstage">
       <div class="tword on">
@@ -1440,7 +1569,7 @@ body.motion-paused .mq-track{animation-play-state:paused}
 <section id="book">
   <div class="wrap">
     <div class="book-head">
-      <div class="eyebrow" data-reveal><span class="num">09</span>Book Your Session</div>
+      <div class="eyebrow" data-reveal><span class="num">10</span>Book Your Session</div>
       <h2 data-reveal="2">Pick your time.<br><em>The rest is rest.</em></h2>
       <p class="lede" data-reveal="3" style="margin:0 auto">
         Choose a service, pick a day that suits you, and you are booked.
@@ -1483,7 +1612,7 @@ body.motion-paused .mq-track{animation-play-state:paused}
 <section id="faq">
   <div class="wrap">
     <div class="faq-head">
-      <div class="eyebrow" data-reveal><span class="num">10</span>Frequently Asked Questions</div>
+      <div class="eyebrow" data-reveal><span class="num">11</span>Frequently Asked Questions</div>
       <h2 data-reveal="2">Before your<br><em>first session.</em></h2>
     </div>
     <div class="faq-list" data-reveal="2">
@@ -1557,7 +1686,7 @@ body.motion-paused .mq-track{animation-play-state:paused}
   <div class="wrap">
     <div class="grid">
       <div>
-        <div class="eyebrow" data-reveal><span class="num">11</span>Visit the Studio</div>
+        <div class="eyebrow" data-reveal><span class="num">12</span>Visit the Studio</div>
         <h2 data-reveal="2">The table<br><em>is ready.</em></h2>
         <div class="c-list" data-reveal="3">
           <div class="c-item">
@@ -1587,6 +1716,25 @@ body.motion-paused .mq-track{animation-play-state:paused}
       </div>
       <div class="plate-cap" data-reveal="3">The studio, prepared</div>
     </div>
+
+    <div class="bcard" data-reveal>
+      <div class="bcard-faces">
+        <img src="img/card-front.webp" width="1400" height="802" loading="lazy"
+             alt="Business card, front: the Gifted Touch lotus, Gifted Touch Therapeutic Massage, and the line Anointed hands. A gifted touch.">
+        <img src="img/card-back.webp" width="1400" height="802" loading="lazy"
+             alt="Business card, back: Etete Agbabune, LMT, board certified, with the phone number, email, website, studio address and license numbers listed on this page.">
+      </div>
+      <div class="bcard-info">
+        <div class="lbl">Her card</div>
+        <h3>Keep her number close.</h3>
+        <p>Save Etete straight into your phone's contacts, or keep a copy of her card to pass
+        along to someone who needs an hour of care.</p>
+        <div class="bcard-cta">
+          <a class="btn btn-gold" href="/etete-agbabune.vcf">Save to contacts</a>
+          <a class="btn btn-ghost" href="/gifted-touch-business-card.pdf" download>Download her card</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1605,6 +1753,7 @@ body.motion-paused .mq-track{animation-play-state:paused}
         <a href="#story">The Story</a>
         <a href="#services">Services &amp; Rates</a>
         <a href="#mobile">Corporate &amp; Chair</a>
+        <a href="#events">Events</a>
         <a href="#bodycare">Body Care</a>
         <a href="/shop">Shop</a>
         <a href="#gallery">Gallery</a>
