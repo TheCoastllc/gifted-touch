@@ -38,6 +38,22 @@
     {
       "source": "/shop",
       "destination": "/shop.html"
+    },
+    {
+      "source": "/policies",
+      "destination": "/policies.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/policies.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/policies.html"
+    },
+    {
+      "source": "/accessibility",
+      "destination": "/policies.html"
     }
   ]
 }

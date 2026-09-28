@@ -9,6 +9,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<script>
+(function(){try{
+  var m=localStorage.getItem('gt_mode'); if(m==='purple') document.documentElement.setAttribute('data-theme','purple');
+  if(localStorage.getItem('gt_motion')==='paused') document.documentElement.classList.add('pre-motion-paused');
+}catch(e){}})();
+</script>
 <style>
 /* ===== DEFAULT THEME: Vesper Bronze ===== */
 /* ===== DEFAULT: Bronze & Teal ===== */
@@ -68,7 +74,7 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:104px;scroll-padding-bottom:92px}
 body{
   background:var(--noir);
   color:var(--ivory);
@@ -130,9 +136,9 @@ nav.scrolled{background:var(--scrim-nav);backdrop-filter:blur(14px);padding:14px
 #mobilemenu{
   position:fixed;inset:0;background:var(--scrim-menu);backdrop-filter:blur(20px);z-index:105;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;
-  opacity:0;visibility:hidden;transition:.45s;
+  opacity:0;visibility:hidden;transition:opacity .45s,visibility 0s linear .45s;
 }
-#mobilemenu.open{opacity:1;visibility:visible}
+#mobilemenu.open{opacity:1;visibility:visible;transition:opacity .45s,visibility 0s}
 #mobilemenu a{font-family:var(--serif);font-size:30px;font-weight:500;color:var(--ivory)}
 #mobilemenu a.bookbtn{font-family:var(--sans);font-size:14px;letter-spacing:.16em;text-transform:uppercase;margin-top:10px}
 
@@ -479,12 +485,16 @@ h1.play .br{animation:breathIn .5s .9s both}
   color:var(--gold);font-weight:500;display:flex;align-items:center;gap:16px;
 }
 .tword cite::before,.tword cite::after{content:"";height:1px;width:30px;background:var(--line)}
-.tdots{display:flex;gap:12px;justify-content:center;margin-top:46px}
+.tdots{display:flex;gap:0;justify-content:center;margin-top:40px}
 .tdots button{
-  width:26px;height:3px;border:none;background:var(--line-soft);cursor:pointer;
-  border-radius:2px;transition:background .4s;padding:0;
+  width:38px;height:24px;border:none;background:transparent;cursor:pointer;padding:0;
+  display:flex;align-items:center;justify-content:center;
 }
-.tdots button.on{background:var(--gold)}
+.tdots button::before{
+  content:"";display:block;width:26px;height:3px;border-radius:2px;
+  background:var(--line-soft);transition:background .4s;
+}
+.tdots button.on::before{background:var(--gold)}
 .bigquote-mark{
   font-family:var(--serif);font-size:110px;line-height:0;color:var(--gold);opacity:.35;
   display:block;margin:40px auto 34px;
@@ -681,7 +691,7 @@ h1.play .br{animation:breathIn .5s .9s both}
   box-shadow:0 30px 60px rgba(42,27,51,.30),0 4px 10px rgba(42,27,51,.14)}
 /* a sheen across the face, like a real card catching light */
 .gc-face::before{content:"";position:absolute;inset:0;
-  background:linear-gradient(115deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.04) 38%,transparent 60%);
+  background:linear-gradient(115deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.026) 38%,transparent 60%);
   pointer-events:none}
 /* the lotus as a large watermark in the lower right */
 .gc-face .wm{position:absolute;right:-6%;bottom:-14%;width:62%;opacity:.13;fill:#fff;pointer-events:none}
@@ -691,18 +701,20 @@ h1.play .br{animation:breathIn .5s .9s both}
 .gc-top .mk svg{width:100%;height:auto;display:block}
 .gc-top .nm{font-family:var(--serif);font-size:clamp(11px,1.3vw,17px);letter-spacing:.06em;line-height:1;white-space:nowrap}
 .gc-top .nm small{display:block;font-family:var(--sans);font-size:clamp(5px,.5vw,7px);letter-spacing:.3em;
-  text-transform:uppercase;opacity:.8;margin-top:.35em;font-weight:400}
+  text-transform:uppercase;margin-top:.35em;font-weight:400}
 .gc-mid{margin-top:auto;position:relative}
-.gc-lbl{font-size:clamp(6px,.62vw,8.5px);letter-spacing:.34em;text-transform:uppercase;opacity:.85;font-weight:500}
+.gc-lbl{font-size:clamp(7px,.62vw,8.5px);letter-spacing:.34em;text-transform:uppercase;font-weight:500}
 .gc-amt{font-family:var(--serif);font-size:clamp(28px,3.4vw,46px);line-height:1;margin-top:.12em;letter-spacing:.02em}
-.gc-amt small{font-size:.42em;vertical-align:top;position:relative;top:.22em;margin-right:.06em;opacity:.9}
-.gc-fine{font-size:clamp(5.5px,.55vw,7.5px);letter-spacing:.16em;text-transform:uppercase;opacity:.72;margin-top:.9em}
+.gc-amt small{font-size:.42em;vertical-align:top;position:relative;top:.22em;margin-right:.06em}
+.gc-fine{font-size:clamp(6.5px,.55vw,7.5px);letter-spacing:.16em;text-transform:uppercase;opacity:.92;margin-top:.9em}
 /* four faces, four moods, all from the brand gradient */
-.gc-face.a{background:linear-gradient(135deg,#FCBE76 0%,#E86B50 45%,#CB2553 100%)}
-.gc-face.b{background:linear-gradient(135deg,#E05A50 0%,#CB2553 45%,#852448 100%)}
+.gc-face.a{background:linear-gradient(135deg,#F7B26A 0%,#EE9155 55%,#E2703F 100%);color:#2E1745}
+.gc-face.a .wm{fill:#2E1745;opacity:.17}
+.gc-face.a .gc-top .mk{fill:#2E1745}
+.gc-face.b{background:linear-gradient(135deg,#B83A2E 0%,#B51F49 50%,#8E2044 100%)}
 .gc-face.c{background:linear-gradient(135deg,#CB2553 0%,#852448 50%,#3A1F57 100%)}
 .gc-face.d{background:linear-gradient(135deg,#3A1F57 0%,#241830 60%,#1A1124 100%)}
-.gc-face.a .gc-top,.gc-face.a .gc-mid{text-shadow:0 1px 2px rgba(80,20,30,.25)}
+.gc-face.a .gc-top,.gc-face.a .gc-mid{text-shadow:0 1px 2px rgba(255,255,255,.32)}
 .gc-under{margin-top:16px;text-align:center}
 .gc-under b{display:block;font-family:var(--serif);font-size:19px;color:var(--ivory);font-weight:400}
 .gc-under span{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);margin-top:5px}
@@ -840,6 +852,33 @@ footer{
   h1 .ln span{transform:none}
   .hero-sub,.hero-ctas,.hero-cred{opacity:1;transform:none}
 }
+/* ---------- accessibility ---------- */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:fixed;left:14px;top:-90px;z-index:400;background:var(--gold);color:var(--on-accent);
+  padding:15px 26px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;
+  border-radius:0 0 4px 4px;transition:top .18s}
+.skip:focus{top:0}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px;border-radius:2px}
+.btn:focus-visible,.bookbtn:focus-visible{outline-offset:4px}
+/* target size, WCAG 2.5.8 */
+.navlinks a{display:inline-flex;align-items:center;min-height:24px}
+/* motion control, WCAG 2.2.2 */
+.motion-ctl{display:inline-flex;align-items:center;gap:10px;margin-top:26px;
+  background:transparent;border:1px solid var(--line);color:var(--ink-dim);cursor:pointer;
+  font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;
+  padding:11px 20px;border-radius:100px;min-height:24px;transition:color .3s,border-color .3s}
+.motion-ctl:hover{color:var(--gold-hi);border-color:var(--gold)}
+.motion-ctl i{width:9px;height:10px;flex:none;position:relative;display:block}
+.motion-ctl i::before,.motion-ctl i::after{content:"";position:absolute;top:0;width:3px;height:10px;
+  background:currentColor;transition:none}
+.motion-ctl i::before{left:0}
+.motion-ctl i::after{right:0}
+body.motion-paused .motion-ctl i::before{left:1px;width:0;height:0;
+  border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid currentColor;
+  background:transparent}
+body.motion-paused .motion-ctl i::after{display:none}
+body.motion-paused .mq-track{animation-play-state:paused}
 </style>
 
 <style>
@@ -887,6 +926,7 @@ footer{
 .item .price{font-family:var(--quote);font-size:19px;color:var(--gold-hi);font-variant-numeric:tabular-nums}
 .item .price.tba{font-family:var(--sans);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim)}
 details.spec{margin-top:14px;border-top:1px solid var(--line-soft);padding-top:12px}
+details.spec summary{min-height:24px;padding:3px 0}
 details.spec summary{
   cursor:pointer;list-style:none;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--gold);font-weight:500;display:flex;justify-content:space-between;align-items:center;
@@ -992,11 +1032,14 @@ body.has-order{padding-bottom:84px}
 </style>
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 <div id="veil" aria-hidden="true">
   <svg viewBox="0 0 680 448" aria-hidden="true"><path d="M337 0 L318 19 L303 37 L284 65 L274 84 L261 121 L258 141 L258 167 L261 186 L267 206 L284 242 L311 280 L337 307 L340 308 L361 288 L372 275 L388 253 L404 225 L410 211 L418 184 L421 164 L421 143 L415 111 L407 89 L397 69 L381 44 L366 25 L342 0 Z"/><path d="M635 214 L591 193 L556 183 L546 212 L532 240 L515 263 L497 281 L482 293 L462 306 L436 319 L395 333 L400 336 L414 340 L448 346 L483 346 L501 343 L523 336 L555 318 L570 306 L590 286 L616 251 L626 234 Z"/><path d="M44 215 L49 227 L66 256 L88 285 L111 308 L121 316 L149 333 L174 342 L197 346 L238 345 L256 342 L283 334 L281 332 L245 320 L224 310 L198 294 L183 282 L163 262 L148 242 L134 215 L125 186 L123 184 L116 184 L83 195 L49 211 Z"/><path d="M159 58 L156 61 L152 88 L152 147 L160 187 L165 201 L174 219 L194 246 L216 265 L248 284 L279 296 L277 291 L258 265 L241 233 L231 206 L226 185 L224 171 L224 136 L227 117 L232 98 L238 83 L238 79 L229 74 L204 66 L178 60 Z"/><path d="M521 58 L501 60 L475 66 L447 75 L441 79 L441 84 L449 105 L454 128 L455 169 L453 184 L447 209 L436 237 L422 263 L399 295 L403 295 L422 288 L444 277 L463 265 L490 240 L506 217 L519 186 L527 146 L528 105 L524 68 Z"/><path d="M1 279 L16 310 L37 344 L60 368 L73 378 L97 393 L130 408 L155 416 L183 422 L200 424 L290 424 L307 429 L321 436 L335 447 L333 441 L327 433 L316 422 L301 412 L279 403 L242 398 L193 395 L152 390 L119 382 L94 371 L56 345 L29 318 Z"/><path d="M678 279 L650 318 L623 345 L585 371 L560 382 L527 390 L486 395 L437 398 L400 403 L378 412 L363 422 L352 433 L346 441 L344 447 L358 436 L384 425 L395 423 L479 424 L496 422 L524 416 L549 408 L582 393 L606 378 L619 368 L642 344 L663 310 Z"/></svg>
   <div class="vword">Gifted Touch</div>
 </div>
-<nav id="nav">
+<header>
+<nav id="nav" aria-label="Main">
   <div class="navwrap">
     <a class="brand" href="/#hero" aria-label="Gifted Touch home">
       <svg viewBox="0 0 680 448" aria-hidden="true"><path d="M337 0 L318 19 L303 37 L284 65 L274 84 L261 121 L258 141 L258 167 L261 186 L267 206 L284 242 L311 280 L337 307 L340 308 L361 288 L372 275 L388 253 L404 225 L410 211 L418 184 L421 164 L421 143 L415 111 L407 89 L397 69 L381 44 L366 25 L342 0 Z"/><path d="M635 214 L591 193 L556 183 L546 212 L532 240 L515 263 L497 281 L482 293 L462 306 L436 319 L395 333 L400 336 L414 340 L448 346 L483 346 L501 343 L523 336 L555 318 L570 306 L590 286 L616 251 L626 234 Z"/><path d="M44 215 L49 227 L66 256 L88 285 L111 308 L121 316 L149 333 L174 342 L197 346 L238 345 L256 342 L283 334 L281 332 L245 320 L224 310 L198 294 L183 282 L163 262 L148 242 L134 215 L125 186 L123 184 L116 184 L83 195 L49 211 Z"/><path d="M159 58 L156 61 L152 88 L152 147 L160 187 L165 201 L174 219 L194 246 L216 265 L248 284 L279 296 L277 291 L258 265 L241 233 L231 206 L226 185 L224 171 L224 136 L227 117 L232 98 L238 83 L238 79 L229 74 L204 66 L178 60 Z"/><path d="M521 58 L501 60 L475 66 L447 75 L441 79 L441 84 L449 105 L454 128 L455 169 L453 184 L447 209 L436 237 L422 263 L399 295 L403 295 L422 288 L444 277 L463 265 L490 240 L506 217 L519 186 L527 146 L528 105 L524 68 Z"/><path d="M1 279 L16 310 L37 344 L60 368 L73 378 L97 393 L130 408 L155 416 L183 422 L200 424 L290 424 L307 429 L321 436 L335 447 L333 441 L327 433 L316 422 L301 412 L279 403 L242 398 L193 395 L152 390 L119 382 L94 371 L56 345 L29 318 Z"/><path d="M678 279 L650 318 L623 345 L585 371 L560 382 L527 390 L486 395 L437 398 L400 403 L378 412 L363 422 L352 433 L346 441 L344 447 L358 436 L384 425 L395 423 L479 424 L496 422 L524 416 L549 408 L582 393 L606 378 L619 368 L642 344 L663 310 Z"/></svg>
@@ -1026,14 +1069,16 @@ body.has-order{padding-bottom:84px}
   <a href="/#contact">Contact</a>
   <a class="bookbtn" href="/#book">Book a Session</a>
 </div>
+</header>
 
 
 
+<main id="main">
 <section id="shophero">
   <div class="wrap">
     <div class="shop-head">
       <div class="eyebrow" data-reveal><span class="num">01</span>The Shop</div>
-      <h2 data-reveal="2">Small batch.<br><em>Handcrafted with prayer.</em></h2>
+      <h1 data-reveal="2">Small batch.<br><em>Handcrafted with prayer.</em></h1>
       <p class="lede" data-reveal="3" style="margin:0 auto">
         Etete blends her own body care line by hand, in small batches, with natural
         ingredients. The care does not end when the session does.
@@ -1046,8 +1091,9 @@ body.has-order{padding-bottom:84px}
   </div>
 </section>
 
-<section id="shop">
+<section id="shop" aria-labelledby="shop-h">
   <div class="wrap">
+    <h2 class="sr-only" id="shop-h">Body care products and gift cards</h2>
     <div class="shop-grid">
       <article class="item" data-name="Sugar Scrub" data-price="24.99" data-reveal>
         <div class="pic"><img src="img/shop-sugar-scrub.jpg" alt="Sugar Scrub, 8 oz / 226 g" loading="lazy"></div>
@@ -1058,7 +1104,7 @@ body.has-order{padding-bottom:84px}
           <p class="desc">A gentle body scrub crafted to exfoliate, soften and refresh the skin, leaving you feeling renewed and restored.</p>
           <details class="spec"><summary>Ingredients &amp; use<i></i></summary><div class="sp"><b>How to use</b>Apply a small amount to damp skin and gently massage in circular motions. Rinse thoroughly with warm water. For best results, use two to three times weekly.<b>Ingredients</b>Sugar, Coconut Oil, Shea Butter, Rosemary, Lavender, Essential Oils and other natural ingredients.<b>Caution</b>For external use only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep out of reach of children. Store in a cool, dry place.</div></details>
           <div class="meta"><span class="size">8 oz / 226 g</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>24.99</span></div>
-          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
+          <div class="qty" data-qty="0" role="group" aria-label="Sugar Scrub quantity"><button type="button" class="qminus" aria-label="Remove one Sugar Scrub">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one Sugar Scrub">+</button><button type="button" class="qadd" aria-label="Add to order: Sugar Scrub">Add to order</button></div>
         </div>
       </article>
       <article class="item" data-name="Body Butter" data-price="" data-reveal>
@@ -1082,7 +1128,7 @@ body.has-order{padding-bottom:84px}
           <p class="desc">A softly scented creme for winding down. Made in small batches by hand, the same blend Etete reaches for at the end of a session.</p>
           
           <div class="meta"><span class="size">4 oz</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>34.99</span></div>
-          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
+          <div class="qty" data-qty="0" role="group" aria-label="Relaxation Creme quantity"><button type="button" class="qminus" aria-label="Remove one Relaxation Creme">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one Relaxation Creme">+</button><button type="button" class="qadd" aria-label="Add to order: Relaxation Creme">Add to order</button></div>
         </div>
       </article>
       <article class="item" data-name="Pain Creme" data-price="34.99" data-reveal>
@@ -1094,7 +1140,7 @@ body.has-order{padding-bottom:84px}
           <p class="desc">Worked into tired joints and stiff muscles. Blended with witch hazel, peppermint, turmeric and rosemary.</p>
           
           <div class="meta"><span class="size">4 oz</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>34.99</span></div>
-          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
+          <div class="qty" data-qty="0" role="group" aria-label="Pain Creme quantity"><button type="button" class="qminus" aria-label="Remove one Pain Creme">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one Pain Creme">+</button><button type="button" class="qadd" aria-label="Add to order: Pain Creme">Add to order</button></div>
         </div>
       </article>
       <article class="item" data-name="Pain Spray" data-price="29.99" data-reveal>
@@ -1106,7 +1152,7 @@ body.has-order{padding-bottom:84px}
           <p class="desc">The same relief in a spray, for the places hands cannot easily reach. Light, fast and easy to carry.</p>
           
           <div class="meta"><span class="size">4 oz</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>29.99</span></div>
-          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
+          <div class="qty" data-qty="0" role="group" aria-label="Pain Spray quantity"><button type="button" class="qminus" aria-label="Remove one Pain Spray">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one Pain Spray">+</button><button type="button" class="qadd" aria-label="Add to order: Pain Spray">Add to order</button></div>
         </div>
       </article>
       <article class="item" data-name="Lavanilla Oil Roller" data-price="11.99" data-reveal>
@@ -1118,7 +1164,7 @@ body.has-order{padding-bottom:84px}
           <p class="desc">A roller for wrists, temples and the back of the neck. Small enough for a handbag, calm enough for a long day.</p>
           
           <div class="meta"><span class="size">10 ml</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>11.99</span></div>
-          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
+          <div class="qty" data-qty="0" role="group" aria-label="Lavanilla Oil Roller quantity"><button type="button" class="qminus" aria-label="Remove one Lavanilla Oil Roller">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one Lavanilla Oil Roller">+</button><button type="button" class="qadd" aria-label="Add to order: Lavanilla Oil Roller">Add to order</button></div>
         </div>
       </article>
       <article class="item" data-name="Hair Growth Elixir" data-price="24.99" data-reveal>
@@ -1130,7 +1176,7 @@ body.has-order{padding-bottom:84px}
           <p class="desc">A scalp and hair elixir blended by hand, built around rosemary and peppermint.</p>
           
           <div class="meta"><span class="size">16 oz</span><span class="price"><small style="font-size:.6em;vertical-align:top;position:relative;top:.25em">$</small>24.99</span></div>
-          <div class="qty" data-qty="0"><button type="button" class="qminus" aria-label="Remove one">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one">+</button><button type="button" class="qadd">Add to order</button></div>
+          <div class="qty" data-qty="0" role="group" aria-label="Hair Growth Elixir quantity"><button type="button" class="qminus" aria-label="Remove one Hair Growth Elixir">&minus;</button><span class="qn">0</span><button type="button" class="qplus" aria-label="Add one Hair Growth Elixir">+</button><button type="button" class="qadd" aria-label="Add to order: Hair Growth Elixir">Add to order</button></div>
         </div>
       </article>
             <div class="gift-row" data-reveal>
@@ -1180,19 +1226,20 @@ body.has-order{padding-bottom:84px}
 
 
 <!-- ===== order bar: appears once anything is added ===== -->
-<div id="orderbar" hidden>
+<aside id="orderbar" aria-label="Your order" hidden>
   <div class="ob-in">
     <span class="ob-sum"><b id="ob-count">0 items</b><span id="ob-total">$0.00</span></span>
     <button type="button" class="btn btn-gold" id="ob-open">Review &amp; pay</button>
   </div>
-</div>
+</aside>
+<p class="sr-only" id="ob-status" role="status" aria-live="polite"></p>
 
 <!-- ===== order drawer ===== -->
 <div id="orderdrawer" hidden>
   <div class="od-scrim" id="od-close"></div>
-  <aside class="od" role="dialog" aria-label="Your order">
+  <div class="od" role="dialog" aria-modal="true" aria-labelledby="od-title">
     <div class="od-head">
-      <div class="eyebrow" style="margin:0"><span class="num">&nbsp;</span>Your order</div>
+      <div class="eyebrow" style="margin:0" id="od-title"><span class="num" aria-hidden="true">&nbsp;</span>Your order</div>
       <button type="button" class="od-x" id="od-close2" aria-label="Close">&times;</button>
     </div>
     <ul class="od-lines" id="od-lines"></ul>
@@ -1222,7 +1269,7 @@ body.has-order{padding-bottom:84px}
       <a class="btn btn-ghost" id="od-mail" href="#">Email it instead</a>
     </div>
     <p class="od-fine">Pick up at the studio, 3303 Westmill Dr SW, Suite 8, or at your next session.</p>
-  </aside>
+  </div>
 </div>
 
 <section id="order">
@@ -1260,6 +1307,8 @@ body.has-order{padding-bottom:84px}
   </div>
 </section>
 
+</main>
+
 <footer class="deep">
   <div class="wrap">
     <div class="f-grid">
@@ -1284,6 +1333,13 @@ body.has-order{padding-bottom:84px}
         <a href="mailto:gifted70touch@gmail.com">gifted70touch@gmail.com</a>
       </div>
       <div class="f-col">
+        <b>Policies</b>
+        <a href="/policies#privacy">Privacy Policy</a>
+        <a href="/policies#terms">Terms of Use</a>
+        <a href="/policies#accessibility">Accessibility</a>
+        <a href="/policies#booking">Booking &amp; Payment</a>
+      </div>
+      <div class="f-col">
         <b>Credentials</b>
         <span>Etete Agbabune, LMT</span>
         <span>Board Certified · NCTMB 403638-00</span>
@@ -1301,6 +1357,10 @@ body.has-order{padding-bottom:84px}
 <script>
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var motionPaused = false;
+  try { motionPaused = localStorage.getItem('gt_motion') === 'paused'; } catch(e){}
+  document.documentElement.classList.remove('pre-motion-paused');
+  document.body.classList.toggle('motion-paused', motionPaused);
 
   /* veil */
   var veil = document.getElementById('veil');
@@ -1325,15 +1385,30 @@ body.has-order{padding-bottom:84px}
   /* burger */
   var burger = document.getElementById('burger');
   var menu = document.getElementById('mobilemenu');
+  function setMenu(open){
+    burger.classList.toggle('open', open);
+    menu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    if(open){
+      /* the menu fades in from visibility:hidden, so focus once it can take it */
+      setTimeout(function(){ var first = menu.querySelector('a'); if(first && menu.classList.contains('open')) first.focus(); }, 80);
+    }
+  }
   burger.addEventListener('click',function(){
-    burger.classList.toggle('open');
-    menu.classList.toggle('open');
+    setMenu(!menu.classList.contains('open'));
   });
   menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      burger.classList.remove('open');
-      menu.classList.remove('open');
-    });
+    a.addEventListener('click',function(){ setMenu(false); });
+  });
+  document.addEventListener('keydown',function(e){
+    if(!menu.classList.contains('open')) return;
+    if(e.key === 'Escape'){ setMenu(false); burger.focus(); return; }
+    if(e.key !== 'Tab') return;
+    /* keep focus on the menu and its close button while the overlay covers the page */
+    var f = [burger].concat([].slice.call(menu.querySelectorAll('a[href],button')));
+    var i = f.indexOf(document.activeElement);
+    if(e.shiftKey && i <= 0){ e.preventDefault(); f[f.length-1].focus(); }
+    else if(!e.shiftKey && (i === f.length-1 || i === -1)){ e.preventDefault(); f[0].focus(); }
   });
 
   /* reveals */
@@ -1347,7 +1422,7 @@ body.has-order{padding-bottom:84px}
   /* testimonial rotation */
   var words = document.querySelectorAll('#tstage .tword');
   var dots = document.getElementById('tdots');
-  var idx = 0, timer;
+  var idx = 0, timer, restartCarousel = function(){};
   if(words.length && dots){
   words.forEach(function(_,i){
     var b = document.createElement('button');
@@ -1359,12 +1434,20 @@ body.has-order{padding-bottom:84px}
   function show(i){
     words[idx].classList.remove('on');
     dots.children[idx].classList.remove('on');
+    dots.children[idx].removeAttribute('aria-current');
     idx = i;
     words[idx].classList.add('on');
     dots.children[idx].classList.add('on');
+    dots.children[idx].setAttribute('aria-current','true');
   }
   function next(){ show((idx+1)%words.length); }
-  function restart(){ clearInterval(timer); if(!reduced) timer=setInterval(next,6000); }
+  function restart(){ clearInterval(timer); if(!reduced && !motionPaused) timer=setInterval(next,6000); }
+  restartCarousel = restart;
+  dots.children[0].setAttribute('aria-current','true');
+  /* rotation stops while the reader is hovering or tabbing through it */
+  var stage = document.getElementById('words');
+  ['mouseenter','focusin'].forEach(function(ev){ stage.addEventListener(ev,function(){ clearInterval(timer); }); });
+  ['mouseleave','focusout'].forEach(function(ev){ stage.addEventListener(ev,function(){ restart(); }); });
   restart();
 
   /* stage height (absolute children) */
@@ -1383,6 +1466,22 @@ body.has-order{padding-bottom:84px}
   window.addEventListener('load',sizeStage);
   window.addEventListener('resize',sizeStage);
   }
+
+  /* ---- pause, stop, hide: one control for the marquee and the rotation ---- */
+  var mbtns = document.querySelectorAll('.motion-ctl');
+  function setMotion(paused){
+    motionPaused = paused;
+    document.body.classList.toggle('motion-paused', paused);
+    mbtns.forEach(function(b){
+      b.setAttribute('aria-pressed', String(paused));
+      var t = b.querySelector('.motion-ctl-t');
+      if(t) t.textContent = paused ? 'Play motion' : 'Pause motion';
+    });
+    try { localStorage.setItem('gt_motion', paused ? 'paused' : 'playing'); } catch(e){}
+    restartCarousel();
+  }
+  mbtns.forEach(function(b){ b.addEventListener('click',function(){ setMotion(!motionPaused); }); });
+  if(motionPaused) setMotion(true);
 
   var yr=document.getElementById('yr');
   if(yr) yr.textContent = new Date().getFullYear();
@@ -1427,11 +1526,14 @@ body.has-order{padding-bottom:84px}
     var L=lines().map(function(k){ return cart[k]+' x '+k+' ('+money(cart[k]*items[k].price)+')'; });
     return 'Hi Etete, I would like to order:\n'+L.join('\n')+'\nTotal '+money(total())+'\nI have paid by Zelle / Cash App. My name is ';
   }
+  var announce=false;
   function render(){
     Object.keys(items).forEach(function(k){
       var q=cart[k]||0, box=items[k].qty; if(!box) return;
       box.setAttribute('data-qty', q); box.querySelector('.qn').textContent=q;
-      box.querySelector('.qadd').textContent = q>0 ? 'In your order' : 'Add to order';
+      var add=box.querySelector('.qadd');
+      add.textContent = q>0 ? 'In your order' : 'Add to order';
+      add.setAttribute('aria-label', q>0 ? 'In your order. Review and pay.' : 'Add to order: '+k);
     });
     var n=count(), bar=document.getElementById('orderbar');
     bar.hidden = n===0; document.body.classList.toggle('has-order', n>0);
@@ -1444,6 +1546,10 @@ body.has-order{padding-bottom:84px}
       ul.appendChild(li);
     });
     document.getElementById('od-total').textContent=money(total());
+    if(announce){
+      document.getElementById('ob-status').textContent =
+        n===0 ? 'Your order is empty.' : n+(n===1?' item':' items')+' in your order. Total '+money(total())+'.';
+    }
     var body=encodeURIComponent(orderText());
     document.getElementById('od-sms').href='sms:'+PHONE+'?&body='+body;
     document.getElementById('od-mail').href='mailto:'+MAIL+'?subject='+encodeURIComponent('Body care order')+'&body='+body;
@@ -1456,14 +1562,32 @@ body.has-order{padding-bottom:84px}
     box.querySelector('.qadd').addEventListener('click',function(){ if(!(cart[k]>0)) cart[k]=1; render(); openDrawer(); });
   });
   var drawer=document.getElementById('orderdrawer');
-  function openDrawer(){ drawer.hidden=false; document.body.style.overflow='hidden'; }
-  function closeDrawer(){ drawer.hidden=true; document.body.style.overflow=''; }
+  var lastFocus=null;
+  function focusable(){ return drawer.querySelectorAll('a[href],button:not([disabled])'); }
+  function openDrawer(){
+    lastFocus=document.activeElement;
+    drawer.hidden=false; document.body.style.overflow='hidden';
+    var f=focusable(); if(f.length) f[0].focus();
+  }
+  function closeDrawer(){
+    if(drawer.hidden) return;
+    drawer.hidden=true; document.body.style.overflow='';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  drawer.addEventListener('keydown',function(e){
+    if(e.key!=='Tab' || drawer.hidden) return;
+    var f=focusable(); if(!f.length) return;
+    var first=f[0], last=f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  });
   document.getElementById('ob-open').addEventListener('click',openDrawer);
   var oc=document.getElementById('oc-order'); if(oc) oc.addEventListener('click',function(e){ if(count()>0){ e.preventDefault(); openDrawer(); } });
   document.getElementById('od-close').addEventListener('click',closeDrawer);
   document.getElementById('od-close2').addEventListener('click',closeDrawer);
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDrawer(); });
   render();
+  announce=true;
 })();
 </script>
 </body>
